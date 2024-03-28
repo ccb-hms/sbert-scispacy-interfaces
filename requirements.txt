@@ -1,0 +1,10 @@
+torch~=2.2.1
+owlready2~=0.44
+text2term~=4.1.2
+spacy~=3.7.4
+scispacy~=0.5.4
+shortuuid~=1.0.13
+truecase~=0.0.14
+pandas~=2.0.3
+nltk~=3.8.1
+pydantic~=2.6.4

@@ -1,0 +1,370 @@
+Extracting entities using scispacy model en_ner_bc5cdr_md...
+
+Processing data/InfDisease.txt...
+No named entities found in text: Acinetobacter
+No named entities found in text: Acute disseminated Encephalomyelitis
+No named entities found in text: Adenovirus
+No named entities found in text: Alveolar Echinococcosis (Ae)
+No named entities found in text: Anetoderma
+No named entities found in text: Anthrax
+No named entities found in text: Arenaviruses
+No named entities found in text: Ascariasis
+No named entities found in text: Atypical Mycobacterial diseases
+No named entities found in text: Avian influenza (bird flu)
+No named entities found in text: Babesiosis
+No named entities found in text: Bacillary Angiomatosis
+No named entities found in text: Balantidiasis
+No named entities found in text: Botulism
+No named entities found in text: Brucellosis
+No named entities found in text: Burkholderia Cepacia
+No named entities found in text: Burn wound infections
+No UMLS mappings found for entity: Cbrne - Botulism
+No named entities found in text: Cbrne - glanders and Melioidosis
+No named entities found in text: Cbrne - smallpox
+No named entities found in text: Covid-19 pulmonary management
+No named entities found in text: Covid-19 treatment: Investigational drugs and other therapies
+No named entities found in text: Covid-19 vaccines
+No named entities found in text: Covid-19 Variants
+No named entities found in text: Cardiobacterium
+No named entities found in text: Cervicitis
+No named entities found in text: Chancroid
+No named entities found in text: Chikungunya virus
+No named entities found in text: Chlamydial Pneumonias
+No named entities found in text: Chronic bacterial Prostatitis
+No named entities found in text: Common drug interactions with protease inhibitors
+No named entities found in text: Coxsackieviruses
+No named entities found in text: Cryptococcosis
+No named entities found in text: Cutaneous manifestations of HIV
+No UMLS mappings found for entity: Cutaneous Protothecosis
+No named entities found in text: Cystoisosporiasis
+No named entities found in text: Cytomegalovirus Organism-Specific therapy
+No named entities found in text: Dengue
+No named entities found in text: Dermatologic manifestations of Rubella
+No named entities found in text: Dermatologic use of botulinum toxin
+No named entities found in text: Diphyllobothriasis
+No named entities found in text: Dipylidiasis
+No named entities found in text: Diverticulitis
+No named entities found in text: Drug interactions with Antiretroviral therapy (art)
+No named entities found in text: Echinococcosis Hydatid Cyst
+No named entities found in text: Ecthyma
+No named entities found in text: Ecthyma Gangrenosum
+No named entities found in text: Ehrlichiosis
+No named entities found in text: Elizabethkingia infections
+No named entities found in text: Enteroviruses
+No named entities found in text: Eosinophilic Folliculitis
+No UMLS mappings found for entity: Epidural infections (spinal Epidural Abscess) and Subdural infections (Subdural Empyema)
+No named entities found in text: Erysipeloid
+No named entities found in text: Erythrasma
+No named entities found in text: Escherichia coli (E coli) infections
+No named entities found in text: Favus
+No named entities found in text: Felon
+No named entities found in text: Filariasis
+No named entities found in text: Giant Condylomata Acuminata of Buschke and Lowenstein
+No named entities found in text: Gram-negative Folliculitis
+No named entities found in text: Group a Streptococcal (gas) infections
+No named entities found in text: Group B Streptococcus (Gbs) infections
+No named entities found in text: Hiv Prophylaxis in sexual assault
+No named entities found in text: Hiv treatment Regimens CDC guidelines, Adult/Adolescent
+No named entities found in text: Hiv treatment Regimens CDC guidelines, Pediatric
+No named entities found in text: Hiv and nutrition
+No UMLS mappings found for entity: Hiv-Associated Nephropathy and other Hiv-Related renal disorders
+No named entities found in text: Hand-Foot-And-Mouth disease (Hfmd)
+No named entities found in text: Hepatitis C
+No named entities found in text: Hepatitis E
+No named entities found in text: Herpangina
+No named entities found in text: Histoplasmosis
+No named entities found in text: Hookworm disease
+No named entities found in text: Human bites
+No UMLS mappings found for entity: Human Cowpox infection
+No named entities found in text: Human Herpesvirus 6 (Hhv-6) infection
+No named entities found in text: Human Metapneumovirus
+No named entities found in text: Human Papillomavirus (Hpv)
+No named entities found in text: Human Papillomavirus (Hpv) Organism-Specific therapy
+No named entities found in text: Impetigo Organism-Specific therapy
+No named entities found in text: Influenza
+No named entities found in text: Influenza Antiviral therapy
+No named entities found in text: Intestinal Flukes
+No named entities found in text: Intracranial Epidural Abscess
+No named entities found in text: Intravenous-To-Oral switch therapy
+No named entities found in text: Kuru
+No named entities found in text: Laboratory diagnostics and testing guidance for Covid-19
+No named entities found in text: Leishmaniasis
+No named entities found in text: Leprosy
+No named entities found in text: Leptospirosis
+No named entities found in text: Loiasis (African eye worm)
+No named entities found in text: Long Coronavirus 2019 (Covid-19)
+No named entities found in text: Lyme disease
+No named entities found in text: Lymphocytic Choriomeningitis virus (Lcmv) infection
+No named entities found in text: Malakoplakia
+No named entities found in text: Malaria
+No named entities found in text: Malaria Organism-Specific therapy
+No named entities found in text: Measles Organism-Specific therapy
+No named entities found in text: Milker's nodules
+No named entities found in text: Monkeypox (Mpox)
+No UMLS mappings found for entity: Moraxella Catarrhalis infection
+No named entities found in text: Mycetoma
+No named entities found in text: Needle-Stick guideline
+No named entities found in text: Nematode infections
+No named entities found in text: Neuromuscular and Myopathic complications of HIV
+No named entities found in text: Nonbacterial Prostatitis
+No named entities found in text: Norovirus
+No named entities found in text: Orbivirus
+No named entities found in text: Orf
+No named entities found in text: Paracoccidioidomycosis
+No named entities found in text: Parapoxviruses
+No named entities found in text: Pasteurella Multocida infection
+No named entities found in text: Pediatric Rubella in emergency medicine
+No named entities found in text: Pediatric vaccines: global brands and country availability
+No named entities found in text: Piedra
+No named entities found in text: Pinta
+No named entities found in text: Pinworm (Enterobiasis)
+No named entities found in text: Pitted Keratolysis
+No named entities found in text: Plague
+No named entities found in text: Poliomyelitis
+No named entities found in text: Postexposure HIV Prophylaxis in physicians and medical personnel
+No named entities found in text: Poxviruses
+No UMLS mappings found for entity: Preexposure HIV Prophylaxis
+No named entities found in text: Prion-Related diseases
+No named entities found in text: Pyonephrosis
+No named entities found in text: Q fever
+No named entities found in text: Rabies
+No named entities found in text: Ramsay Hunt syndrome
+No named entities found in text: Reoviruses
+No named entities found in text: Rhinosporidiosis
+No named entities found in text: Rickettsialpox
+No named entities found in text: Roseola Infantum
+No named entities found in text: Sarcosporidiosis
+No named entities found in text: Schistosomiasis (Bilharzia)
+No named entities found in text: Serratia
+No named entities found in text: Smallpox
+No named entities found in text: Spinal Epidural Abscess
+No named entities found in text: Spinal infections
+No named entities found in text: Strongyloidiasis
+No named entities found in text: Syphilis
+No named entities found in text: Syphilis Organism-Specific therapy
+No named entities found in text: Tapeworm infestation
+No named entities found in text: Thogotoviruses/Bourbon virus
+No named entities found in text: Tick-Borne diseases
+No named entities found in text: Travel medicine and vaccination
+No named entities found in text: Treatment recommendations for Hiv-Infected patients with Co-Infections
+No named entities found in text: Trematode infection
+No named entities found in text: Trichinosis (Trichinellosis)
+No named entities found in text: Tropical Myeloneuropathies
+No named entities found in text: Typhoid fever
+No named entities found in text: Typhus
+No named entities found in text: Vaccinations/Immunizations during pregnancy
+No named entities found in text: Vaccinia
+No named entities found in text: Varicella-Zoster virus (Vzv)
+No named entities found in text: Wound infection
+No named entities found in text: Zika virus
+
+Processing data/InfDfromEFO.txt...
+No named entities found in text: Subcutaneous Mycosis
+No named entities found in text: Subphrenic Abscess
+No named entities found in text: Haemonchiasis
+No named entities found in text: Typhus
+No named entities found in text: Pythiosis
+No UMLS mappings found for entity: Bacteriemia
+No named entities found in text: Commensal Bifidobacteriales infectious disease
+No named entities found in text: Monieziasis
+No named entities found in text: Dermatomycosis
+No named entities found in text: Infectious Colitis
+No named entities found in text: Genital herpes
+No named entities found in text: Yaws
+No named entities found in text: Psoas Abscess
+No named entities found in text: Zika virus infectious disease
+No named entities found in text: Lyme disease
+No named entities found in text: Helminthiasis
+No named entities found in text: Kuru
+No named entities found in text: Necatoriasis
+No named entities found in text: Transverse Myelitis
+No named entities found in text: Parasitic Ectoparasitic infectious disease
+No named entities found in text: Dysentery
+No named entities found in text: Histoplasmosis
+No named entities found in text: Bulbar polio
+No named entities found in text: Viral sexually transmitted disease
+No named entities found in text: Typhoid fever
+No named entities found in text: Pseudorabies
+No named entities found in text: Ascaridiasis
+No named entities found in text: Paracoccidioidomycosis
+No named entities found in text: Scrapie
+No named entities found in text: Syphilis
+No named entities found in text: Babesiosis
+No named entities found in text: Cysticercosis
+No named entities found in text: Prostatitis
+No named entities found in text: Gnathomiasis
+No named entities found in text: Hepatitis C virus infection
+No named entities found in text: Parasitic Endophthalmitis
+No named entities found in text: Congenital Rubella
+No named entities found in text: Pasteurellosis
+No named entities found in text: Primary Actinomycetales infectious disease
+No named entities found in text: Tertiary Syphilis
+No named entities found in text: Leprosy
+No named entities found in text: Black Piedra
+No named entities found in text: Mycobacterium Avium complex disease
+No named entities found in text: Circoviridae infections
+No named entities found in text: Hypodermyiasis
+No named entities found in text: Progressive Rubella Panencephalitis
+No named entities found in text: Bacterial disease
+No named entities found in text: Ear infection
+No named entities found in text: Infectious disease
+No named entities found in text: Echinococcosis
+No named entities found in text: Burkholderia infections
+No named entities found in text: Lice infestation
+No named entities found in text: Enterobacteriaceae infections
+No named entities found in text: Prosthesis-Related infections
+No named entities found in text: Dicrocoeliasis
+No named entities found in text: Fascioliasis
+No named entities found in text: Chronic Pyelonephritis
+No named entities found in text: Perichondritis of Auricle
+No named entities found in text: Scrub typhus
+No named entities found in text: Ascariasis
+No UMLS mappings found for entity: Kluver-Bucy syndrome
+No named entities found in text: American Trypanosomiasis
+No named entities found in text: Loiasis
+No named entities found in text: Leptospirosis
+No named entities found in text: Colorado tick fever
+No named entities found in text: Hiv-1 infection
+No named entities found in text: Rickettsiosis
+No named entities found in text: Chancre
+No named entities found in text: Sarcocystosis
+No named entities found in text: Astroviridae infectious disease
+No named entities found in text: Bacterial Exanthem
+No named entities found in text: Pinta
+No named entities found in text: Aids-Related disease
+No named entities found in text: Sexually transmitted disease
+No named entities found in text: Pneumonic Pasteurellosis
+No UMLS mappings found for entity: Togaviridae infectious disease
+No named entities found in text: Ocular Toxoplasmosis
+No named entities found in text: Aids
+No named entities found in text: Escherichia coli infections
+No named entities found in text: Ancylostomiasis
+No named entities found in text: Strongyloidiasis
+No named entities found in text: Paragonimiasis
+No named entities found in text: Mite infestation
+No named entities found in text: Opisthorchiasis
+No named entities found in text: Bacterial Vaginosis
+No named entities found in text: Peritonsillar Abscess
+No UMLS mappings found for entity: Chikungunya encephalitis
+No named entities found in text: Measles
+No named entities found in text: Poliomyelitis
+No named entities found in text: Mosquito-Borne viral encephalitis
+No named entities found in text: Neurosyphilis
+No named entities found in text: Malaria
+No named entities found in text: Schistosomiasis Japonica
+No named entities found in text: Neisseriaceae infections
+No named entities found in text: Smallpox
+No named entities found in text: Trichostrongyloidiasis
+No named entities found in text: Infectious Embryofetopathy
+No named entities found in text: Influenza
+No named entities found in text: Fascioloidiasis
+No named entities found in text: Cystoisosporiasis
+No named entities found in text: Birnaviridae infections
+No named entities found in text: Filoviridae infectious disease
+No named entities found in text: Actinobacillosis
+No named entities found in text: Mansonelliasis
+No named entities found in text: Herpangina
+No named entities found in text: Placental Hemangioma
+No named entities found in text: Dipetalonemiasis
+No named entities found in text: Q fever
+No named entities found in text: Leishmaniasis
+No named entities found in text: Molluscum Contagiosum
+No named entities found in text: Legionnaires' disease
+No named entities found in text: Coinfection
+No UMLS mappings found for entity: Flaviviridae infectious disease
+No named entities found in text: Silicotuberculosis
+No named entities found in text: Staphyloenterotoxemia
+No named entities found in text: Euglenozoa infections
+No named entities found in text: Avian influenza
+No named entities found in text: Spirochaetales infections
+No named entities found in text: Human African Trypanosomiasis
+No named entities found in text: Common wart
+No named entities found in text: Roseolovirus infectious disease
+No named entities found in text: Encephalitozoonosis
+No named entities found in text: Glanders
+No named entities found in text: Laryngeal tuberculosis
+No named entities found in text: Cowpox
+No named entities found in text: Tick infestation
+No named entities found in text: Bacterial sexually transmitted disease
+No named entities found in text: Cytomegalovirus virus reactivation
+No named entities found in text: Ornithosis
+No named entities found in text: Whooping cough
+No named entities found in text: Rubella
+No named entities found in text: Hiv infection
+No named entities found in text: Balantidiasis
+No named entities found in text: Flavobacteriaceae infections
+No named entities found in text: Urethritis
+No named entities found in text: Schistosomiasis Mansoni
+No UMLS mappings found for entity: Erysipelothrix infectious disease
+No named entities found in text: Piedra
+No named entities found in text: Dracunculiasis
+No UMLS mappings found for entity: Acanthamoeba infectious disease
+No named entities found in text: Rhinosporidiosis
+No named entities found in text: Pyomyositis
+No named entities found in text: Piscirickettsiaceae infections
+No named entities found in text: Lentivirus infections
+No named entities found in text: Infectious encephalitis
+No named entities found in text: Abscess
+No named entities found in text: Urinary Schistosomiasis
+No named entities found in text: Fusariosis
+No UMLS mappings found for entity: Screw worm infectious disease
+No named entities found in text: Bartonellosis
+No named entities found in text: Borderline leprosy
+No named entities found in text: Chlamydiaceae infections
+No named entities found in text: Salmonella infections
+No named entities found in text: Chronic encephalitis
+No named entities found in text: Trichinosis
+No named entities found in text: Subacute bacterial Endocarditis
+No named entities found in text: Cyclosporiasis
+No named entities found in text: Cryptococcosis
+No named entities found in text: Iatrogenic Botulism
+No UMLS mappings found for entity: Klebsiella infectious disease
+No UMLS mappings found for entity: Erysipelothrix Rhusiopathiae infectious disease
+No named entities found in text: Superficial Mycosis
+No named entities found in text: Hiv-Associated cancer
+No named entities found in text: Diphyllobothriasis
+No named entities found in text: Meningococcal infection
+No named entities found in text: Milker's Nodule
+No UMLS mappings found for entity: Pseudomonas Aeruginosa Pa14 infection
+No named entities found in text: Filarial Elephantiasis
+No named entities found in text: Bordetellosis
+No named entities found in text: Echinostomiasis
+No named entities found in text: Primary systemic Mycosis
+No UMLS mappings found for entity: Rhabditida infectious disease
+No named entities found in text: Meibomian Cyst
+No named entities found in text: Acute transverse Myelitis
+No named entities found in text: Mycoplasmatales infections
+No named entities found in text: Hiv Enteropathy
+No named entities found in text: Hookworm infectious disease
+No named entities found in text: Vector-Borne disease
+No named entities found in text: Paralytic Poliomyelitis
+No named entities found in text: Laryngotracheitis
+No named entities found in text: Cervicofacial Actinomycosis
+No named entities found in text: Botulism
+No named entities found in text: Theileriasis
+No named entities found in text: Opportunistic systemic Mycosis
+No named entities found in text: Drosophila C virus infection
+No named entities found in text: Hepatic tuberculosis
+No named entities found in text: Disease arising from reactivation of latent virus
+No named entities found in text: Brucellosis
+No named entities found in text: Covid-19
+No named entities found in text: Avulavirus infectious disease
+No named entities found in text: Aids related complex
+No named entities found in text: Filariasis
+No named entities found in text: Peste des petits ruminants infectious disease
+No named entities found in text: Parasitic eye infection
+No named entities found in text: Latent Syphilis
+No named entities found in text: Enterobiasis
+No named entities found in text: Trombiculiasis
+No named entities found in text: Aleutian mink disease
+No named entities found in text: Retropharyngeal Abscess
+No named entities found in text: Pneumovirus infections
+No named entities found in text: Trematode infections
+No named entities found in text: Intestinal Helminthiasis
+No named entities found in text: Ostertagiasis
+No named entities found in text: Acute disseminated Encephalomyelitis
+No named entities found in text: Parasitic Ichthyosporea infectious disease
+No named entities found in text: Noma
+No named entities found in text: Oesophagostomiasis
+No named entities found in text: Parasitic eyelid infestation
+No named entities found in text: Schistosomiasis

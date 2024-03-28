@@ -1,0 +1,671 @@
+internal hordeolum
+Acanthamoeba keratitis
+digestive system infectious disorder
+susceptibility to malaria
+subcutaneous mycosis
+swine influenza
+West Nile encephalitis
+subphrenic abscess
+hepatitis D virus infection
+septicemic plague
+hantavirus pulmonary syndrome
+haemonchiasis
+typhus
+Pythiosis
+dermatophytosis
+legionellosis
+contagious pustular dermatitis
+bacteriemia
+commensal Bifidobacteriales infectious disease
+renal tuberculosis
+discitis
+central nervous system tuberculosis
+anaerobic cellulitis
+Monieziasis
+amebiasis
+infective arthritis
+Bunyaviridae infectious disease
+oral tuberculosis
+plantar wart
+dermatomycosis
+equine infectious anemia
+rhinoscleroma
+infectious colitis
+infective endocarditis
+genital herpes
+septic peritonitis
+Kaposi's sarcoma
+Parvoviridae infectious disease
+staphylococcal pneumonia
+yaws
+viral conjunctivitis
+central nervous system infection
+cutaneous candidiasis
+focal epithelial hyperplasia
+Psoas abscess
+giardiasis
+amebic dysentery
+Chagas disease
+mucormycosis
+hordeolum
+Salmonella gastroenteritis
+Zika virus infectious disease
+Lyme disease
+endophthalmitis
+Reoviridae infectious disease
+cutaneous syphilis
+mycobacterial infectious disease
+skin and soft tissue Staphylococcus aureus infection
+Varicella Zoster infection
+fungal lung infectious disease
+Helminthiasis
+nocardiosis
+kuru
+skin infection
+toxascariasis
+necatoriasis
+PrP systemic amyloidosis
+setariasis
+lymphogranuloma venereum
+ventilator-associated pneumonia
+anisakiasis
+chronic hepatitis C virus infection
+inclusion conjunctivitis
+acute hemorrhagic leukoencephalitis
+transverse myelitis
+parasitic ectoparasitic infectious disease
+Human T-lymphotropic virus 1 infectious disease
+dysentery
+campylobacteriosis
+Mumps virus infectious disease
+pharyngoconjunctival fever
+ocular onchocerciasis
+histoplasmosis
+pleural tuberculosis
+Hibiscus chlorotic ringspot virus infection
+bulbar polio
+viral sexually transmitted disease
+Bordetella Infections
+pulmonary tuberculosis
+typhoid fever
+Aeromonas hydrophila infection
+pseudorabies
+ascaridiasis
+Pestivirus infectious disease
+Human T-lymphotropic virus 2 infectious disease
+Chlamydia trachomatis infectious disease
+paracoccidioidomycosis
+idiopathic acute transverse myelitis
+infection due to clostridium perfringens
+scrapie
+Candidiasis, Invasive
+clostridium difficile infection
+lipid pneumonia
+syphilis
+Nematoda infectious disease
+babesiosis
+cysticercosis
+prostatitis
+Tularemia
+pulmonary non-tuberculous mycobacterial infection
+scarlet fever
+actinomycosis
+gnathomiasis
+Henipavirus infectious disease
+hepatitis C virus infection
+severe malarial anemia
+Pasteurella multocida infectious disease
+acquired Creutzfeldt-Jakob disease
+herpes simplex encephalitis
+Picornaviridae infectious disease
+iatrogenic Kaposi's sarcoma
+parasitic endophthalmitis
+Lassa fever
+Klebsiella Infections
+heartwater disease
+viral respiratory tract infection
+primary viral infectious disease
+toxocariasis
+Plasmodium vivax malaria
+Pasteurellaceae Infections
+systemic mycosis
+salmonellosis
+congenital rubella
+pasteurellosis
+primary Actinomycetales infectious disease
+Pseudomonas aeruginosa infectious disease
+anaerobic pneumonia
+tertiary syphilis
+leprosy
+black piedra
+Arbovirus Infections
+Mycobacterium avium complex disease
+congenital toxoplasmosis
+Circoviridae Infections
+coronavirus infectious disease
+streptococcal meningitis
+myiasis
+infectious mononucleosis
+fatal familial insomnia
+hypodermyiasis
+Paramyxoviridae infectious disease
+skin disorder caused by infection
+Herpesviridae infectious disease
+Actinobacillus infectious disease
+cutaneous Leishmaniasis
+progressive rubella panencephalitis
+disseminated sporotrichosis
+bacterial disease
+Ascaridida infectious disease
+ear infection
+Western equine encephalitis
+infectious disease
+echinococcosis
+Burkholderia Infections
+geniculate herpes zoster
+lice infestation
+Creutzfeldt Jacob Disease
+subdural empyema
+tetanus
+pneumonia
+human prion disease
+Enterobacteriaceae Infections
+Prosthesis-Related Infections
+dicrocoeliasis
+Encephalitis, Tick-Borne
+Pectobacterium carotovorum infection
+Ritter's disease
+viral meningitis
+Fascioliasis
+Hantavirus infectious disease
+rotavirus infection
+cat-scratch disease
+listeriosis
+chronic pyelonephritis
+perichondritis of auricle
+erythema infectiosum
+viral infection of central nervous system
+croup
+severe acute respiratory syndrome
+Yersinia pestis infectious disease
+Cestode infectious disease
+HIV-Associated Lipodystrophy Syndrome
+scrub typhus
+ascariasis
+Kluver-Bucy syndrome
+Bacteroides infectious disease
+American trypanosomiasis
+skeletal tuberculosis
+bronchopneumonia
+loiasis
+tick-borne infectious disease
+Central Nervous System Helminthiasis
+leptospirosis
+drug-resistant tuberculosis
+Colorado tick fever
+purulent endophthalmitis
+HIV-1 infection
+pyelonephritis
+human granulocytic anaplasmosis
+chronic hepatitis B virus infection
+chickenpox
+dirofilariasis
+primary Bartonellaceae infectious disease
+rickettsiosis
+Methicillin-Resistant Staphylococcus Aureus Pneumonia
+Proteus infectious disease
+acute hemorrhagic encephalitis
+orbital cellulitis
+chancre
+sarcocystosis
+chronic human papillomavirus infection
+idiopathic interstitial pneumonia
+Astroviridae infectious disease
+hepatitis E virus infection
+bacterial exanthem
+Pinta
+shigellosis
+streptococcal pharyngitis
+Taeniasis
+West Nile fever
+oral candidiasis
+xanthogranulomatous pyelonephritis
+Hepadnaviridae infectious disease
+meningitis caused by poliovirus
+acute hemorrhagic conjunctivitis
+syphilitic aortitis
+AIDS-related disease
+geotrichosis
+male genital tuberculosis
+Perimeningeal Infections
+Torovirus infectious disease
+sexually transmitted disease
+pneumococcal meningitis
+Dendritic keratitis
+recurrent pneumonia
+urinary tract infection
+pneumonic pasteurellosis
+Togaviridae infectious disease
+sporotrichosis
+Myelitis
+pulmonary aspergillosis
+hymenolepiasis
+cutaneous mycosis
+ocular toxoplasmosis
+AIDS
+Escherichia coli Infections
+ancylostomiasis
+commensal Desulfovibrionaceae infectious disease
+primary Anaplasmataceae infectious disease
+tropical spastic paraparesis
+strongyloidiasis
+paragonimiasis
+commensal bacterial infectious disease
+mite infestation
+infective vaginitis
+anogenital venereal wart
+pyogenic liver abscess
+tick paralysis
+opisthorchiasis
+bacterial vaginosis
+serum lipopolysaccharide activity
+peritonsillar abscess
+lobomycosis
+infectious arthritis
+Chikungunya encephalitis
+spotted fever
+diphtheria
+measles
+urogenital tuberculosis
+primary Bacillaceae infectious disease
+congenital enterovirus infection
+Middle East respiratory syndrome
+primary Fusobacteriaceae infectious disease
+Zoster Sine Herpete
+poliomyelitis
+lassa virus infectious disease
+tuberculous empyema
+mosquito-borne viral encephalitis
+neurosyphilis
+Serratia Infections
+malaria
+fungal infectious disease
+lupus vulgaris
+disseminated atypical mycobacterial infection
+Schistosomiasis japonica
+Neisseriaceae Infections
+smallpox
+lumpy skin disease
+cerebral malaria
+Vibrio infectious disease
+tuberculous salpingitis
+Venezuelan equine encephalitis
+trichostrongyloidiasis
+infectious embryofetopathy
+Tungiasis
+influenza
+tuberculous fibrosis of lung
+blackwater fever
+fascioloidiasis
+Methicillin-Resistant Staphylococcus Aureus Infection
+cystoisosporiasis
+Birnaviridae Infections
+Filoviridae infectious disease
+anaplasmosis
+Polyomavirus infectious disease
+viral human hepatitis infection
+Treponema infectious disease
+tuberculoid leprosy
+bacterial pneumonia
+actinobacillosis
+gas gangrene
+neuroschistosomiasis
+bacterial hemorrhagic fever
+BK-virus nephropathy
+Herpes Labialis
+hepatitis B virus infection
+candidiasis
+central nervous system AIDS arteritis
+neuroaspergillosis
+ophthalmic herpes zoster
+mansonelliasis
+herpangina
+boutonneuse fever
+cytomegalovirus infection
+Placental Hemangioma
+hantavirus hemorrhagic fever with renal syndrome
+intestinal infectious disease
+lepromatous leprosy
+dipetalonemiasis
+allergic bronchopulmonary aspergillosis
+Q fever
+Leishmaniasis
+skin disease caused by bacterial infection
+rat-bite fever
+postpoliomyelitis syndrome
+retroperitoneal infection
+molluscum contagiosum
+Legionnaires' disease
+pneumonia caused by gram negative bacteria
+Herpes simplex virus keratitis
+coinfection
+Flaviviridae infectious disease
+silicotuberculosis
+diffuse cutaneous Leishmaniasis
+Cryptogenic Organizing Pneumonia
+staphyloenterotoxemia
+Euglenozoa Infections
+avian influenza
+Enterococcus faecalis infection
+Vancomycin-Resistant Staphylococcus Aureus Infection
+Marburg hemorrhagic fever
+granuloma inguinale
+Spirochaetales Infections
+epidural abscess
+coxsackievirus infectious disease
+human african trypanosomiasis
+Listeria meningitis
+common wart
+Flavivirus Infections
+Pasteurella hemorrhagic septicemia
+Pseudomonas aeruginosa CF5 infection
+adult T-cell leukemia/lymphoma
+Roseolovirus infectious disease
+encephalitozoonosis
+Japanese encephalitis
+Pneumocystis infectious disease
+multidrug-resistant tuberculosis
+Mononegavirales infectious disease
+Haemophilus influenzae meningitis
+abdominal tuberculosis
+glanders
+cerebral toxoplasmosis
+Whipple's disease
+laryngeal tuberculosis
+infectious meningitis
+cowpox
+tick infestation
+pneumococcal infection
+pneumococcal bacteremia
+bacterial sexually transmitted disease
+Herpes Zoster
+cytomegalovirus virus reactivation
+anaerobic bacteria infectious disease
+pneumocystosis
+ornithosis
+whooping cough
+Arenavirus hemorrhagic fever
+vulvovaginal candidiasis
+rubella
+staphylococcal toxemia
+Arterivirus infectious disease
+HIV infection
+Rickettsiaceae infectious disease
+anaerobic meningitis
+bacterial meningitis caused by gram-negative bacteria
+splenic tuberculosis
+tinea pedis
+HIV-associated nephropathy
+protozoal dysentery
+Ebola hemorrhagic fever
+balantidiasis
+cryptococcal meningitis
+Flavobacteriaceae Infections
+urethritis
+meningeal tuberculosis
+coccidioidomycosis
+Enterovirus infectious disease
+Dengue Hemorrhagic Fever
+viral eye infection
+Nidovirales infectious disease
+Cardiovirus infectious disease
+Schistosomiasis mansoni
+hepatitis A virus infection
+Erysipelothrix infectious disease
+borna disease
+infectious, fungal or parasitic myopathy
+Methicillin-Susceptible Staphylococcus Aureus Infection
+bacterial myositis
+piedra
+parasitic intestinal disease
+tuberculosis
+Newcastle disease
+influenza A (H1N1)
+opportunistic bacterial infectious disease
+endocrine tuberculosis
+Escherichia coli meningitis
+Chlamydophila infectious disease
+Borrelia infectious disease
+dracunculiasis
+Buruli ulcer disease
+onchocerciasis
+bacterial meningitis
+Ludwig's angina
+human papilloma virus infection
+Acanthamoeba infectious disease
+Osteomyelitis leading to amputation due to slow healing fractures
+bacterial endocarditis
+Gerstmann-Straussler-Scheinker syndrome
+Eastern equine encephalitis
+rhinosporidiosis
+erysipelas
+Pyomyositis
+Piscirickettsiaceae Infections
+poliovirus infection
+tinea
+bacterial urinary tract infection
+Adenoviridae Infections
+Orthocoronavirinae infectious disease
+Lentivirus Infections
+infectious encephalitis
+abscess
+lymph node tuberculosis
+trench fever
+urinary schistosomiasis
+fusariosis
+iatrogenic Creutzfeldt-Jakob disease
+screw worm infectious disease
+tabes dorsalis
+otitis externa
+bartonellosis
+Enoplea infectious disease
+borderline leprosy
+streptococcal pneumonia
+Chlamydiaceae Infections
+Salmonella Infections
+commensal Bacteroidaceae infectious disease
+chronic encephalitis
+primary Haemophilus infectious disease
+osteomyelitis
+trichinosis
+subacute bacterial endocarditis
+pneumococcal pneumonia
+Mycoplasma pneumoniae pneumonia
+trypanosomiasis
+cyclosporiasis
+Yersinia enterocolitica infectious disease
+cryptococcosis
+eye infection
+Alphavirus infectious disease
+Zika virus congenital syndrome
+iatrogenic botulism
+Klebsiella infectious disease
+Erysipelothrix rhusiopathiae infectious disease
+inherited Creutzfeldt-Jakob disease
+Caliciviridae infectious disease
+opportunistic Moraxellaceae infectious disease
+superficial mycosis
+subacute sclerosing panencephalitis
+HIV-associated cancer
+human herpesvirus 8 infection
+viral pneumonia
+nosocomial infection
+diphyllobothriasis
+sparganosis
+infectious otitis interna
+meningococcal infection
+eosinophilic pneumonia
+pulpitis
+milker's nodule
+Ureaplasma urealyticum urethritis
+Pseudomonas aeruginosa PA14 infection
+Coronaviridae infectious disease
+filarial elephantiasis
+respiratory tract infectious disorder
+Morbillivirus infectious disease
+bordetellosis
+animal viral hepatitis
+gonorrhea
+echinostomiasis
+Herpes simplex infection
+fungal meningitis
+primary systemic mycosis
+Rhabditida infectious disease
+Exanthema Subitum
+Tuberculosis, Cutaneous
+meibomian cyst
+acute transverse myelitis
+Mycoplasmatales Infections
+visceral Leishmaniasis
+postinfectious encephalitis
+coccidiosis
+pityriasis versicolor
+Huntington disease-like 1
+viral disease
+eumycotic mycetoma
+protozoa infectious disease
+Yersinia pseudotuberculosis infectious disease
+cardiac tuberculosis
+Deltaretrovirus Infections
+opportunistic mycosis
+HIV enteropathy
+hookworm infectious disease
+abdominal abscess
+Mycobacterium infection
+vector-borne disease
+progressive multifocal leukoencephalopathy
+non-typhoidal Salmonella bacteremia
+prion disease
+Respiratory Syncytial Virus Infection
+paralytic poliomyelitis
+corneal infection
+laryngotracheitis
+Fusobacterium infectious disease
+cervicofacial actinomycosis
+Blastocystis hominis infectious disease
+rickettsial pneumonia
+trichuriasis
+hand, foot and mouth disease
+Leprosy, Paucibacillary
+botulism
+extrapulmonary tuberculosis
+trichomoniasis
+theileriasis
+Plasmodium falciparum malaria
+blastomycosis
+opportunistic systemic mycosis
+Drosophila C virus infection
+sporadic Creutzfeld Jacob disease
+commensal Clostridium infectious disease
+anaerobic balanitis
+tuberculous peritonitis
+enzootic pneumonia of calves
+Brill-Zinsser disease
+Puerperal Infection
+hepatic tuberculosis
+microsporidiosis
+staphylococcal skin infections
+Chagas cardiomyopathy
+Yersinia infectious disease
+Epstein-Barr virus infection
+eye infectious disorder
+mosquito-borne hemorragic fever
+disease arising from reactivation of latent virus
+brucellosis
+Candidemia
+anthrax infection
+Trichomonas vaginitis
+variant Creutzfeldt-Jakob disease
+paratyphoid fever
+subcutaneous tissue infection
+COVID-19
+Avulavirus infectious disease
+AIDS related complex
+ocular tuberculosis
+filariasis
+HIV wasting syndrome
+trichostrongylosis
+peste des petits ruminants infectious disease
+late congenital syphilis
+Cestode Infections
+gram-positive bacterial infections
+panophthalmitis
+Helicobacter pylori infectious disease
+parasitic eye infection
+latent syphilis
+disseminated candidiasis
+enterobiasis
+dengue disease
+mucocutaneous Leishmaniasis
+Phlebotomus fever
+inherited prion disease
+trombiculiasis
+viral encephalitis
+cellulitis
+streptococcal infection
+tracheitis
+simian immunodeficiency virus infection
+aleutian mink disease
+bacterial conjunctivitis
+Retropharyngeal Abscess
+hemorrhagic fever with renal syndrome
+parasitic infection
+Staphylococcus aureus infection
+Pneumovirus Infections
+rubella encephalitis
+toxoplasmosis
+Strongylida infectious disease
+aspergillosis
+pericardial tuberculosis
+meningococcal meningitis
+tinea favosa
+parasitic skin disorder
+contagious pleuropneumonia
+echovirus infectious disease
+burkholderia infectious disease
+Trematode Infections
+infectious disorder of the nervous system
+empyema
+cryptosporidiosis
+intestinal helminthiasis
+congenital syphilis
+ostertagiasis
+Ciliophora infectious disease
+acute disseminated encephalomyelitis
+parasitic Ichthyosporea infectious disease
+Cytomegalovirus Retinitis
+Pneumonia, Aspiration
+noma
+Rhabdoviridae infectious disease
+Pseudomonas infection
+oesophagostomiasis
+parasitic eyelid infestation
+Acinetobacter infectious disease
+gram-negative bacterial infections
+Herpes simplex virus gingivostomatitis
+St. Louis encephalitis
+hemorrhagic fever
+epidemic louse-borne typhus
+viral hemorrhagic fever
+epidemic pleurodynia
+Lung Abscess
+Arenaviridae infectious disease
+gastrointestinal tuberculosis
+Orthomyxoviridae infectious disease
+schistosomiasis
+clonorchiasis
+Respirovirus infectious disease
+miliary tuberculosis
+primary bacterial infectious disease
+chromoblastomycosis
+Ornithine transcarbamylase deficiency
