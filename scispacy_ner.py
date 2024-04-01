@@ -10,10 +10,10 @@ from scispacy.abbreviation import AbbreviationDetector
 import nltk
 nltk.download('punkt')
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 
-class ScipacyUmlsNer:
+class ScispacyUmlsNer:
 
     def __init__(self, model="en_ner_bc5cdr_md"):
         # Load the given scispacy model
@@ -107,15 +107,15 @@ class ScipacyUmlsNer:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("scispacy_ner")
     parser.add_argument("-m", "--model", default="en_core_sci_scibert", type=str,
-                        help="Name of the ScispaCy model to be used.")
+                        help="Name of the scispaCy model to be used.")
     args = parser.parse_args()
     my_model = args.model
 
-    print(f"Extracting entities using scispacy model {my_model}...")
+    print(f"Extracting entities using scispaCy model {my_model}...")
     output_dir = os.path.join("output_scispacy", f"output_{my_model}")
     os.makedirs(output_dir, exist_ok=True)
 
-    my_scispacy = ScipacyUmlsNer(my_model)
+    my_scispacy = ScispacyUmlsNer(my_model)
 
     df1 = my_scispacy.extract_entities_in_file("data/InfDisease.txt")
     df1.to_csv(os.path.join(output_dir, "InfDisease_scispacy_entities.tsv"), sep="\t", index=False)
