@@ -1,5 +1,5 @@
 # sbert-scispacy-interfaces
-prototype interfaces for NER with [scispaCy](https://allenai.github.io/scispacy/) and generating sentence embeddings with [SentenceTransformers (sbert)](https://www.sbert.net)
+prototype tools for NER with [scispaCy](https://allenai.github.io/scispacy/) and generating sentence embeddings with [SentenceTransformers (sbert)](https://www.sbert.net)
 
 
 ## scispaCy NER
