@@ -10,31 +10,31 @@ from scispacy.abbreviation import AbbreviationDetector
 import nltk
 nltk.download('punkt')
 
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 
 class ScispacyUmlsNer:
 
     def __init__(self, model="en_ner_bc5cdr_md"):
         # Load the given scispacy model
-        self._MODEL = model
-        self._NER = spacy.load(self._MODEL)
+        self._model = model
+        self._ner = spacy.load(self._model)
 
         # Add abbreviation detector and UMLS linker
-        self._NER.add_pipe("abbreviation_detector")
-        self._NER.add_pipe("scispacy_linker", config={"resolve_abbreviations": True,
+        self._ner.add_pipe("abbreviation_detector")
+        self._ner.add_pipe("scispacy_linker", config={"resolve_abbreviations": True,
                                                       "linker_name": "umls",
                                                       "filter_for_definitions": False,
                                                       "no_definition_threshold": 0.85,
                                                       "max_entities_per_mention": 1})
         # Headers of output dataframe
-        self._OUTPUT_DF_HEADERS = ["ID", "InputText", "Entity", "EntityLabel", "UMLS.CUI", "UMLS.Label",
+        self._output_df_headers = ["ID", "InputText", "Entity", "EntityLabel", "UMLS.CUI", "UMLS.Label",
                                    "UMLS.Definition", "UMLS.SemanticTypeIDs", "UMLS.SemanticTypeLabels",
                                    "UMLS.Synonyms", "UMLS.Score"]
 
         # Load UMLS Semantic Types table
         # https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/documentation/SemanticTypesAndGroups.html
-        self._UMLS_SEMANTIC_TYPES = pd.read_csv(
+        self._umls_semantic_types = pd.read_csv(
             "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt",
             sep="|", names=['abbv', 'tui', 'label'])
 
@@ -42,14 +42,14 @@ class ScispacyUmlsNer:
         temp_entity_id = shortuuid.ShortUUID().random(length=10)
         text = truecase.get_true_case(text)
         output_data = []
-        doc = self._NER(text=text)
+        doc = self._ner(text=text)
         if len(doc.ents) == 0:
             print(f"No named entities found in text: {text}")
             self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text, entity="",
                                        entity_label="")
             return output_data
         for entity in doc.ents:  # Extract named entities and link them to UMLS
-            linker = self._NER.get_pipe("scispacy_linker")
+            linker = self._ner.get_pipe("scispacy_linker")
             if len(entity._.kb_ents) > 0:
                 for umls_entity in entity._.kb_ents:
                     cui, score = umls_entity
@@ -66,7 +66,7 @@ class ScispacyUmlsNer:
                 self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text,
                                            entity=entity.text, entity_label=entity.label_)
         if output_as_df:
-            return pd.DataFrame(output_data, columns=self._OUTPUT_DF_HEADERS)
+            return pd.DataFrame(output_data, columns=self._output_df_headers)
         else:
             return output_data
 
@@ -79,7 +79,7 @@ class ScispacyUmlsNer:
                 line = line.replace("\n", "")
                 if line != "":
                     output_data.extend(self.extract_entities(line))
-        output_df = pd.DataFrame(output_data, columns=self._OUTPUT_DF_HEADERS)
+        output_df = pd.DataFrame(output_data, columns=self._output_df_headers)
         return output_df
 
     def _add_entity_to_output(self, data, input_id, input_text, entity, entity_label, umls_cui="", umls_label="",
@@ -99,7 +99,7 @@ class ScispacyUmlsNer:
     def _get_umls_semantic_type_labels(self, semantic_types):
         semantic_type_labels = ""
         for semantic_type in semantic_types:
-            semantic_type_labels_df = self._UMLS_SEMANTIC_TYPES[self._UMLS_SEMANTIC_TYPES["tui"] == semantic_type]
+            semantic_type_labels_df = self._umls_semantic_types[self._umls_semantic_types["tui"] == semantic_type]
             semantic_type_labels += semantic_type_labels_df["label"].item() + ","
         return semantic_type_labels.rstrip(",")
 
