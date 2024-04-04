@@ -1,0 +1,28 @@
+left	right	score
+Myocardial Infarction	heart failure	0.5286658406257629
+Myocardial Infarction	heart	0.45475316047668457
+Myocardial Infarction	heart part	0.373879611492157
+heart attack	heart failure	0.7203283309936523
+heart attack	heart	0.6677724123001099
+heart attack	heart part	0.5846296548843384
+alzeimer disease, alzeimer disease	lyme disease	0.3383028507232666
+alzeimer disease, alzeimer disease	alzheimer's disease	0.2983877658843994
+alzeimer disease, alzeimer disease	heart failure	0.15185943245887756
+alzheimer's	alzheimer's disease	0.8840345144271851
+alzheimer's	heart failure	0.3046967685222626
+alzheimer's	lyme disease	0.29941344261169434
+physical activity	exercise	0.7478551864624023
+physical activity	heart part	0.2874944806098938
+physical activity	heart	0.28638994693756104
+exercising	exercise	0.9224302768707275
+exercising	heart	0.26016712188720703
+exercising	heart part	0.2559519410133362
+lyme	lyme disease	0.8558613061904907
+lyme	alzheimer's disease	0.23323920369148254
+lyme	heart	0.18801578879356384
+lime disease	lyme disease	0.3563334345817566
+lime disease	heart failure	0.2973637282848358
+lime disease	alzheimer's disease	0.24182173609733582
+kuru	Kuru	1.0000001192092896
+kuru	heart	0.27552640438079834
+kuru	heart part	0.21311211585998535
