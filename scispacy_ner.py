@@ -1,23 +1,28 @@
 import os
 import spacy
 import scispacy
+import logging
 import argparse
 import shortuuid
 import truecase
 import pandas as pd
+from text2term import onto_utils
 from scispacy.linking import EntityLinker
 from scispacy.abbreviation import AbbreviationDetector
 import nltk
 nltk.download('punkt')
 
-__version__ = "0.4.2"
+__version__ = "0.4.3"
 
 
 class ScispacyUmlsNer:
 
     def __init__(self, model="en_ner_bc5cdr_md"):
+        self._log = onto_utils.get_logger("sbert.spelunking", logging.INFO)
+
         # Load the given scispacy model
         self._model = model
+        self._log.info(f"Loading scispaCy model {my_model}...")
         self._ner = spacy.load(self._model)
 
         # Add abbreviation detector and UMLS linker
@@ -44,7 +49,7 @@ class ScispacyUmlsNer:
         output_data = []
         doc = self._ner(text=text)
         if len(doc.ents) == 0:
-            print(f"No named entities found in text: {text}")
+            self._log.info(f"No named entities found in text: {text}")
             self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text, entity="",
                                        entity_label="")
             return output_data
@@ -62,7 +67,7 @@ class ScispacyUmlsNer:
                                                umls_semantic_types=details.types, umls_definition=details.definition,
                                                umls_synonyms=", ".join(details.aliases), umls_mapping_score=score)
             else:
-                print(f"No UMLS mappings found for entity: {text}")
+                self._log.info(f"No UMLS mappings found for entity: {text}")
                 self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text,
                                            entity=entity.text, entity_label=entity.label_)
         if output_as_df:
@@ -71,7 +76,7 @@ class ScispacyUmlsNer:
             return output_data
 
     def extract_entities_in_file(self, text_file):
-        print(f"\nProcessing {text_file}...")
+        self._log.info(f"\nProcessing {text_file}...")
         output_data = []
         with open(text_file, 'r') as file:
             lines = file.readlines()
@@ -111,7 +116,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     my_model = args.model
 
-    print(f"Extracting entities using scispaCy model {my_model}...")
     output_dir = os.path.join("output_scispacy", f"output_{my_model}")
     os.makedirs(output_dir, exist_ok=True)
 
