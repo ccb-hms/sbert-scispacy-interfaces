@@ -23,7 +23,7 @@ And then details of the UMLS terms that the detected entities were mapped to in 
 
 
 ## Sentence-BERT (sbert) embeddings
-`sbert_embedder.py` provides the class `SbertEmbedder` that takes as input the name of a sentence embedding model (see models here), and then can compare two lists of strings (or two files containing lists of strings), or a list of strings with an ontology, based on embeddings generated for those strings using the specified embedding model.
+`sbert_embedder.py` provides the class `SbertEmbedder` that takes as input the name of a sentence embedding model (see models [here](https://www.sbert.net/docs/pretrained_models.html)), and then can compare two lists of strings (or two files containing lists of strings), or a list of strings with an ontology, based on embeddings generated for those strings using the specified embedding model.
 
 ### Generating embeddings
 There are two functions to create embeddings:
@@ -31,7 +31,7 @@ There are two functions to create embeddings:
 ```python
 get_sentence_embeddings(sentences, save_embeddings=False, output_filepath="")
 ```
-generates embeddings for the given sentences, and optionally serializes the generated embeddings to the specified filepath.
+generates embeddings for input sentences and optionally serializes the generated embeddings to the specified filepath.
 
 ```python
 get_ontology_embeddings(ontology_url, save_embeddings=False, output_filepath="")
@@ -44,7 +44,7 @@ There are three functions to perform cosine similarity-based comparisons of embe
 ```python
 compare_sentences(left_sentences, right_sentences, top_k=3)
 ```
-compares two lists of sentences and returns a data frame containing, for each sentence in `left_sentences` up to k `top_k` closest sentences from `right_sentences`.
+compares two lists of sentences and returns a data frame containing, for each sentence in `left_sentences` up to _k_ `top_k` closest sentences from `right_sentences`.
 
 ```python
 compare_files(left_file, right_file, top_k=3)
@@ -54,4 +54,4 @@ a convenience function to compare two files each containing a list of sentences.
 ```python
 compare_to_ontology(queries, ontology_url, top_k=3)
 ```
-compares a list of sentences against embeddings of terms in the specified ontology. Returns a data frame containing, for each sentence in `query_sentences`, up to k `top_k` closest ontology terms.
+compares a list of sentences against embeddings of terms in the specified ontology. Returns a data frame containing, for each sentence in `query_sentences`, up to _k_ `top_k` closest ontology terms.
