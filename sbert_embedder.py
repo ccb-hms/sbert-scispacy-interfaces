@@ -6,7 +6,7 @@ from owlready2 import *
 from text2term import OntologyTermCollector, OntologyTermType, onto_utils
 from sentence_transformers import SentenceTransformer, util
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 
 class SbertEmbedder:
@@ -153,7 +153,7 @@ class SbertEmbedder:
         """
         with open(filepath, 'r') as file:
             lines = file.readlines()
-            sentences = [line.strip() for line in lines if line != ""]
+            sentences = [line.strip() for line in lines if line.strip() != ""]
             return sentences
 
     @staticmethod

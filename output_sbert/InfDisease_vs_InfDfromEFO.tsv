@@ -3,8 +3,8 @@ Acanthamoeba Infection	Acanthamoeba infectious disease	0.9636740684509277
 Acanthamoeba Infection	Acanthamoeba keratitis	0.782656729221344
 Acinetobacter	Acinetobacter infectious disease	0.8853650093078613
 Acinetobacter	Acanthamoeba infectious disease	0.659002423286438
-Acrodermatitis Chronica Atrophicans	Acanthamoeba keratitis	0.5377496480941772
-Acrodermatitis Chronica Atrophicans	Acinetobacter infectious disease	0.5139235854148865
+Acrodermatitis Chronica Atrophicans	Acanthamoeba keratitis	0.5377497673034668
+Acrodermatitis Chronica Atrophicans	Acinetobacter infectious disease	0.513923704624176
 Actinomycosis	actinomycosis	1.000000238418579
 Actinomycosis	cervicofacial actinomycosis	0.8121207356452942
 Acute Disseminated Encephalomyelitis	acute disseminated encephalomyelitis	1.0000003576278687
@@ -27,8 +27,8 @@ Alveolar Echinococcosis (AE)	echinococcosis	0.8451510667800903
 Alveolar Echinococcosis (AE)	echinostomiasis	0.5546187162399292
 Amebiasis	amebiasis	1.000000238418579
 Amebiasis	myiasis	0.6946155428886414
-Amebic Liver/Hepatic Abscesses	pyogenic liver abscess	0.7356336116790771
-Amebic Liver/Hepatic Abscesses	abdominal abscess	0.6970528364181519
+Amebic Liver/Hepatic Abscesses	pyogenic liver abscess	0.7356337308883667
+Amebic Liver/Hepatic Abscesses	abdominal abscess	0.6970527768135071
 Anetoderma	anisakiasis	0.5268449783325195
 Anetoderma	granuloma inguinale	0.4507177472114563
 Anthrax	anthrax infection	0.8372542858123779
@@ -97,8 +97,8 @@ Bocavirus	Avulavirus infectious disease	0.6475241184234619
 Bocavirus	Flavivirus Infections	0.6360405683517456
 Botulism	botulism	1.000000238418579
 Botulism	iatrogenic botulism	0.8176057934761047
-Bowenoid Papulosis	trichostrongyloidiasis	0.4726547598838806
-Bowenoid Papulosis	disseminated sporotrichosis	0.47178739309310913
+Bowenoid Papulosis	trichostrongyloidiasis	0.4726548194885254
+Bowenoid Papulosis	disseminated sporotrichosis	0.47178736329078674
 Brain Abscess	abscess	0.7307547926902771
 Brain Abscess	central nervous system infection	0.630172848701477
 Brucellosis	brucellosis	1.0000001192092896
@@ -110,13 +110,13 @@ Burn Wound Infections	subcutaneous tissue infection	0.5257977843284607
 Buruli Ulcer	Buruli ulcer disease	0.9299623966217041
 Buruli Ulcer	Burkholderia Infections	0.543765127658844
 CBRNE - Botulism	botulism	0.7449262738227844
-CBRNE - Botulism	iatrogenic botulism	0.5997682809829712
+CBRNE - Botulism	iatrogenic botulism	0.599768340587616
 CBRNE - Glanders and Melioidosis	Helminthiasis	0.47438913583755493
 CBRNE - Glanders and Melioidosis	candidiasis	0.45252034068107605
 CBRNE - Smallpox	smallpox	0.7541309595108032
 CBRNE - Smallpox	vector-borne disease	0.5163521766662598
 CBRNE - Staphylococcal Enterotoxin B	staphylococcal pneumonia	0.5380500555038452
-CBRNE - Staphylococcal Enterotoxin B	Staphylococcus aureus infection	0.5153242945671082
+CBRNE - Staphylococcal Enterotoxin B	Staphylococcus aureus infection	0.5153243541717529
 CBRNE - Viral Hemorrhagic Fevers	viral hemorrhagic fever	0.8215279579162598
 CBRNE - Viral Hemorrhagic Fevers	hemorrhagic fever	0.7947562336921692
 CNS Cryptococcosis in HIV	cryptococcosis	0.7345641851425171
@@ -221,8 +221,8 @@ Coronavirus Disease 2019 (COVID-19) in Children	coronavirus infectious disease	0
 Coronavirus Disease 2019 (COVID-19) in Children	Coronaviridae infectious disease	0.6249707937240601
 Corynebacterium Infections	Mycobacterium infection	0.5952523946762085
 Corynebacterium Infections	Acinetobacter infectious disease	0.5774334669113159
-Coxsackieviruses	coxsackievirus infectious disease	0.936882495880127
-Coxsackieviruses	Flavivirus Infections	0.6320512890815735
+Coxsackieviruses	coxsackievirus infectious disease	0.9368824362754822
+Coxsackieviruses	Flavivirus Infections	0.6320513486862183
 Cryptococcosis	cryptococcosis	1.000000238418579
 Cryptococcosis	cryptococcal meningitis	0.7263995409011841
 Cryptosporidiosis	cryptosporidiosis	1.0
@@ -252,7 +252,7 @@ Cytomegalovirus (CMV)	cytomegalovirus virus reactivation	0.8492892384529114
 Cytomegalovirus (CMV) Retinitis	Cytomegalovirus Retinitis	0.961330235004425
 Cytomegalovirus (CMV) Retinitis	cytomegalovirus infection	0.8200507164001465
 Cytomegalovirus Encephalitis in HIV	cytomegalovirus infection	0.7484267950057983
-Cytomegalovirus Encephalitis in HIV	cytomegalovirus virus reactivation	0.6793584823608398
+Cytomegalovirus Encephalitis in HIV	cytomegalovirus virus reactivation	0.6793584227561951
 Cytomegalovirus Organism-Specific Therapy	cytomegalovirus infection	0.9002829194068909
 Cytomegalovirus Organism-Specific Therapy	cytomegalovirus virus reactivation	0.8531836271286011
 Dengue	dengue disease	0.8708503246307373
@@ -406,7 +406,7 @@ Hairy Leukoplakia	leprosy	0.439291387796402
 Hand Infections	hand, foot and mouth disease	0.6927677392959595
 Hand Infections	infectious arthritis	0.6354435682296753
 Hand-Foot-and-Mouth Disease (HFMD)	hand, foot and mouth disease	0.8449575901031494
-Hand-Foot-and-Mouth Disease (HFMD)	haemonchiasis	0.4522835314273834
+Hand-Foot-and-Mouth Disease (HFMD)	haemonchiasis	0.4522835910320282
 Hantavirus Pulmonary Syndrome	hantavirus pulmonary syndrome	1.0
 Hantavirus Pulmonary Syndrome	Hantavirus infectious disease	0.8186439275741577
 Helicobacter Pylori Infection	Helicobacter pylori infectious disease	0.9546948075294495
@@ -431,14 +431,14 @@ Herpes Simplex Encephalitis	herpes simplex encephalitis	1.0000001192092896
 Herpes Simplex Encephalitis	Herpes simplex infection	0.8176730275154114
 Herpes Simplex Virus (HSV) Empiric Therapy	Herpes simplex infection	0.7506599426269531
 Herpes Simplex Virus (HSV) Empiric Therapy	herpes simplex encephalitis	0.6495043039321899
-Herpes Simplex Virus (HSV) Keratitis	Herpes simplex virus keratitis	0.9667251110076904
+Herpes Simplex Virus (HSV) Keratitis	Herpes simplex virus keratitis	0.9667251706123352
 Herpes Simplex Virus (HSV) Keratitis	Herpes simplex infection	0.763700008392334
 Herpetic Whitlow	genital herpes	0.4488339424133301
 Herpetic Whitlow	Herpes Labialis	0.4384855628013611
 Histoplasmosis	histoplasmosis	1.000000238418579
 Histoplasmosis	toxoplasmosis	0.6804728507995605
 Hookworm Disease	hookworm infectious disease	0.9435409307479858
-Hookworm Disease	screw worm infectious disease	0.6868334412574768
+Hookworm Disease	screw worm infectious disease	0.6868333220481873
 Hospital-Acquired Pneumonia (HAP) and Ventilator-Associated Event (VAE) Empiric Therapy	ventilator-associated pneumonia	0.6641628742218018
 Hospital-Acquired Pneumonia (HAP) and Ventilator-Associated Event (VAE) Empiric Therapy	pneumonia	0.5607365965843201
 Hospital-Acquired Pneumonia (Nosocomial Pneumonia) and Ventilator-Associated Pneumonia	ventilator-associated pneumonia	0.8191041946411133
@@ -521,8 +521,8 @@ Lymphocytic Choriomeningitis Virus (LCMV) Infection	Flavivirus Infections	0.5546
 Lymphocytic Choriomeningitis Virus (LCMV) Infection	viral meningitis	0.5363603830337524
 Lymphogranuloma Venereum (LGV)	lymphogranuloma venereum	0.9240738749504089
 Lymphogranuloma Venereum (LGV)	Human T-lymphotropic virus 2 infectious disease	0.5787631869316101
-Majocchi Granuloma	granuloma inguinale	0.6532291173934937
-Majocchi Granuloma	meibomian cyst	0.47233152389526367
+Majocchi Granuloma	granuloma inguinale	0.6532291769981384
+Majocchi Granuloma	meibomian cyst	0.47233158349990845
 Malakoplakia	kuru	0.43940258026123047
 Malakoplakia	tinea favosa	0.41461747884750366
 Malaria	malaria	1.0
@@ -574,7 +574,7 @@ Mycobacterium Xenopi	mycobacterial infectious disease	0.6576594710350037
 Mycobacterium gordonae Infection	Mycobacterium infection	0.8214424848556519
 Mycobacterium gordonae Infection	mycobacterial infectious disease	0.7834562659263611
 Mycobacterium haemophilum Infection	Mycobacterium infection	0.8063617944717407
-Mycobacterium haemophilum Infection	mycobacterial infectious disease	0.7643033266067505
+Mycobacterium haemophilum Infection	mycobacterial infectious disease	0.76430344581604
 Mycobacterium marinum Infection	Mycobacterium infection	0.7787039875984192
 Mycobacterium marinum Infection	mycobacterial infectious disease	0.7295980453491211
 Mycoplasma Infections (Mycoplasma pneumoniae)	Mycoplasma pneumoniae pneumonia	0.9345905780792236
@@ -591,8 +591,8 @@ Neonatal Meningitis	bacterial meningitis	0.7503506541252136
 Neonatal Meningitis	infectious meningitis	0.7335383892059326
 Neurocysticercosis	cysticercosis	0.752055287361145
 Neurocysticercosis	neuroaspergillosis	0.6351480484008789
-Neuroimaging in Neurocysticercosis	cysticercosis	0.5740624666213989
-Neuroimaging in Neurocysticercosis	neuroaspergillosis	0.549210786819458
+Neuroimaging in Neurocysticercosis	cysticercosis	0.5740624070167542
+Neuroimaging in Neurocysticercosis	neuroaspergillosis	0.5492106676101685
 Neurological Sequelae of Infectious Endocarditis	infective endocarditis	0.8129758238792419
 Neurological Sequelae of Infectious Endocarditis	bacterial endocarditis	0.7957168817520142
 Neuromuscular and Myopathic Complications of HIV	HIV enteropathy	0.6155785322189331
@@ -621,8 +621,8 @@ Osteomyelitis in Emergency Medicine	osteomyelitis	0.8746024370193481
 Osteomyelitis in Emergency Medicine	Osteomyelitis leading to amputation due to slow healing fractures	0.715969979763031
 Pancreatic Necrosis and Pancreatic Abscess	abdominal abscess	0.5680522918701172
 Pancreatic Necrosis and Pancreatic Abscess	abscess	0.5082112550735474
-Papillary Necrosis	necatoriasis	0.5206047296524048
-Papillary Necrosis	septicemic plague	0.43984025716781616
+Papillary Necrosis	necatoriasis	0.5206047892570496
+Papillary Necrosis	septicemic plague	0.439840167760849
 Paracoccidioidomycosis	paracoccidioidomycosis	1.0
 Paracoccidioidomycosis	coccidioidomycosis	0.7861206531524658
 Parapoxviruses	Paramyxoviridae infectious disease	0.6380190849304199
@@ -707,8 +707,8 @@ Pseudotuberculosis (Yersinia pseudotuberculosis Infection)	Yersinia pseudotuberc
 Pseudotuberculosis (Yersinia pseudotuberculosis Infection)	Yersinia infectious disease	0.701280951499939
 Psittacosis (Parrot Fever)	pharyngoconjunctival fever	0.5913199186325073
 Psittacosis (Parrot Fever)	Q fever	0.5377004146575928
-Pustular Psoriasis	contagious pustular dermatitis	0.6024929881095886
-Pustular Psoriasis	cystoisosporiasis	0.5783092379570007
+Pustular Psoriasis	contagious pustular dermatitis	0.6024930477142334
+Pustular Psoriasis	cystoisosporiasis	0.5783093571662903
 Pyoderma Vegetans	erysipelas	0.4853600263595581
 Pyoderma Vegetans	Pyomyositis	0.46564236283302307
 Pyonephrosis	Pythiosis	0.644804835319519
@@ -801,8 +801,8 @@ Stenotrophomonas Maltophilia	Pasteurellaceae Infections	0.5168280005455017
 Stenotrophomonas Maltophilia	silicotuberculosis	0.4976463317871094
 Strongyloidiasis	strongyloidiasis	1.000000238418579
 Strongyloidiasis	Strongylida infectious disease	0.7264001369476318
-Subdural Empyema	subdural empyema	1.0
-Subdural Empyema	empyema	0.6223618388175964
+Subdural Empyema	subdural empyema	1.0000001192092896
+Subdural Empyema	empyema	0.6223618984222412
 Symptoms and Management of Coronavirus Disease 2019 (COVID-19) FAQ	coronavirus infectious disease	0.6385711431503296
 Symptoms and Management of Coronavirus Disease 2019 (COVID-19) FAQ	COVID-19	0.5618106126785278
 Syphilis	syphilis	0.9999998807907104
@@ -947,5 +947,3 @@ Yersinia Enterocolitica	Yersinia enterocolitica infectious disease	0.91805887222
 Yersinia Enterocolitica	Yersinia infectious disease	0.8168264627456665
 Zika Virus	Zika virus infectious disease	0.9416678547859192
 Zika Virus	Zika virus congenital syndrome	0.8116087913513184
-	noma	0.34002071619033813
-	AIDS	0.3392755389213562
