@@ -25,6 +25,12 @@ And then details of the UMLS terms that the detected entities were mapped to in 
 ## Sentence-BERT (sbert) embeddings
 `sbert_embedder.py` provides the class `SbertEmbedder` that takes as input the name of a sentence embedding model (see models [here](https://www.sbert.net/docs/pretrained_models.html)), and then can compare two lists of strings (or two files containing lists of strings), or a list of strings with an ontology, based on embeddings generated for those strings using the specified embedding model.
 
+### Initializing
+To start, create a sentence embedder using a model of choice (by default `all-MiniLM-L6-v2`). 
+```python
+SbertEmbedder(embedding_model="all-MiniLM-L6-v2")
+```
+
 ### Generating embeddings
 There are two functions to create embeddings:
 
