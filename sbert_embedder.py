@@ -20,8 +20,7 @@ class SbertEmbedder:
 
     def get_sentence_embeddings(self, sentences, description="sentence", save_embeddings=False, output_filepath=""):
         """
-        Get embeddings for the given sentences using the specified sentence embedder. Optionally serialize the
-        generated embeddings to the specified filepath.
+        Get embeddings for the given sentences. Optionally serialize the generated embeddings to the specified filepath.
         """
         self._log.info(f"Generating {description} embeddings using model {self._embedding_model}...")
         sentence_embeddings = self._sentence_embedder.encode(sentences, convert_to_numpy=True)
@@ -39,8 +38,8 @@ class SbertEmbedder:
 
     def get_ontology_embeddings(self, ontology_url, description="ontology", save_embeddings=False, output_filepath=""):
         """
-        Get embeddings for terms in the ontology at the given URL, using the specified sentence embedder.
-        Optionally serialize the generated embeddings to the specified filepath.
+        Get embeddings for terms in the ontology at the given URL. Optionally serialize the generated embeddings to
+        the specified filepath.
         """
         term_sentences = self._get_ontology_term_sentences(ontology_url=ontology_url)
         term_embeddings = self.get_sentence_embeddings(sentences=term_sentences,
