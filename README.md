@@ -31,12 +31,12 @@ There are two functions to create embeddings:
 ```python
 get_sentence_embeddings(sentences, save_embeddings=False, output_filepath="")
 ```
-generates embeddings for input sentences and optionally serializes the generated embeddings to the specified filepath.
+generates embeddings for input sentences and optionally serializes the embeddings to the specified filepath.
 
 ```python
 get_ontology_embeddings(ontology_url, save_embeddings=False, output_filepath="")
 ```
-generates embeddings for terms in the ontology at the given URL, and optionally serializes the generated embeddings to
+generates embeddings for terms in the ontology at the given URL, and optionally serializes the embeddings to
         the specified filepath.
 
 ### Comparing embeddings
