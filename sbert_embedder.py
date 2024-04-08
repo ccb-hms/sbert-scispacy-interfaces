@@ -6,7 +6,7 @@ from owlready2 import *
 from text2term import OntologyTermCollector, OntologyTermType, onto_utils
 from sentence_transformers import SentenceTransformer, util
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 
 class SbertEmbedder:
@@ -36,22 +36,26 @@ class SbertEmbedder:
             self._log.info("...done")
         return sentence_embeddings
 
-    def get_ontology_embeddings(self, ontology_url, description="ontology", save_embeddings=False, output_filepath=""):
+    def get_ontology_embeddings(self, ontology_url, description="ontology", save_embeddings=False, output_filepath="",
+                                include_definition=False, include_parents=False, include_restrictions=False):
         """
         Get embeddings for terms in the ontology at the given URL. Optionally serialize the generated embeddings to
         the specified filepath.
         """
-        term_sentences = self._get_ontology_term_sentences(ontology_url=ontology_url)
+        term_sentences = self._get_ontology_term_sentences(ontology_url=ontology_url,
+                                                           include_definition=include_definition,
+                                                           include_parents=include_parents,
+                                                           include_restrictions=include_restrictions)
         term_embeddings = self.get_sentence_embeddings(sentences=term_sentences,
                                                        description=description,
                                                        save_embeddings=save_embeddings,
                                                        output_filepath=output_filepath)
         return term_sentences, term_embeddings
 
-    def _get_ontology_term_sentences(self, ontology_url, include_parents=False, include_restrictions=False):
+    def _get_ontology_term_sentences(self, ontology_url, include_definition, include_parents, include_restrictions):
         """
-        Get a list of sentences each of which represents an ontology term based on its label, definition, synonyms, IRI,
-        and optionally its parents and restrictions of the form 'part-of some Kidney'.
+        Get a list of sentences each of which represents an ontology term based on its label, synonyms, IRI,
+        and optionally its definition, parents, and restrictions of the form 'part-of some Kidney'.
         """
         self._log.info("Preparing ontology term details...")
         term_collector = OntologyTermCollector(ontology_url)
@@ -67,14 +71,15 @@ class SbertEmbedder:
             term_obj = terms[term]
             text_to_embed = ". ".join(str(val) for val in term_obj.labels)
 
-            # add the term definition(s) to the text to embed
-            for definition in term_obj.definitions:
-                definition = definition.replace("\n", "")
-                text_to_embed += f". {definition}"
-
             # add the term synonym(s) to the text to embed
             for synonym in term_obj.synonyms:
                 text_to_embed += f". {term_obj.label} is also known as {synonym}"
+
+            # add the term definition(s) to the text to embed
+            if include_definition:
+                for definition in term_obj.definitions:
+                    definition = definition.replace("\n", "")
+                    text_to_embed += f". {definition}"
 
             # add the parents of the term to the text to embed
             if include_parents:
@@ -133,17 +138,21 @@ class SbertEmbedder:
                                       left_description=left_description, right_description=right_description)
 
     def compare_to_ontology(self, queries, ontology_url, top_k=3, queries_description="query",
-                            ontology_description="ontology", save_embeddings=False, output_filepath=""):
+                            ontology_description="ontology", save_embeddings=False, output_filepath="",
+                            include_definition=False, include_parents=False, include_restrictions=False):
         """
         Compare a list of sentences with embeddings of terms in the specified ontology. Returns a data frame containing:
             for each sentence in `query_sentences', up to k (top_k) closest ontology terms.
         """
         # build a corpus of sentences representing ontology terms, and then generate embeddings for those sentences
-        ontology_sentences, ontology_embeddings = self.get_ontology_embeddings(ontology_url=ontology_url,
-                                                                               description=ontology_description,
-                                                                               save_embeddings=save_embeddings,
-                                                                               output_filepath=output_filepath)
-        return self.compare_sentences(queries, ontology_sentences, None, ontology_embeddings, top_k=top_k,
+        term_sentences, term_embeddings = self.get_ontology_embeddings(ontology_url=ontology_url,
+                                                                       description=ontology_description,
+                                                                       save_embeddings=save_embeddings,
+                                                                       output_filepath=output_filepath,
+                                                                       include_definition=include_definition,
+                                                                       include_parents=include_parents,
+                                                                       include_restrictions=include_restrictions)
+        return self.compare_sentences(queries, term_sentences, None, term_embeddings, top_k=top_k,
                                       left_description=queries_description, right_description=ontology_description)
 
     @staticmethod
