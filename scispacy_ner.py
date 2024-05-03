@@ -12,17 +12,17 @@ from scispacy.abbreviation import AbbreviationDetector
 import nltk
 nltk.download('punkt')
 
-__version__ = "0.4.3"
+__version__ = "0.5.0"
 
 
 class ScispacyUmlsNer:
 
     def __init__(self, model="en_ner_bc5cdr_md"):
-        self._log = onto_utils.get_logger("sbert.spelunking", logging.INFO)
+        self._log = onto_utils.get_logger("scispacy.ner", logging.INFO)
 
         # Load the given scispacy model
         self._model = model
-        self._log.info(f"Loading scispaCy model {my_model}...")
+        self._log.info(f"Loading scispaCy model {model}...")
         self._ner = spacy.load(self._model)
 
         # Add abbreviation detector and UMLS linker
@@ -33,7 +33,7 @@ class ScispacyUmlsNer:
                                                       "no_definition_threshold": 0.85,
                                                       "max_entities_per_mention": 1})
         # Headers of output dataframe
-        self._output_df_headers = ["ID", "InputText", "Entity", "EntityLabel", "UMLS.CUI", "UMLS.Label",
+        self._output_df_headers = ["InputID", "InputText", "Entity", "EntityType", "UMLS.CUI", "UMLS.Label",
                                    "UMLS.Definition", "UMLS.SemanticTypeIDs", "UMLS.SemanticTypeLabels",
                                    "UMLS.Synonyms", "UMLS.Score"]
 
@@ -51,7 +51,7 @@ class ScispacyUmlsNer:
         if len(doc.ents) == 0:
             self._log.info(f"No named entities found in text: {text}")
             self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text, entity="",
-                                       entity_label="")
+                                       entity_type="")
             return output_data
         for entity in doc.ents:  # Extract named entities and link them to UMLS
             linker = self._ner.get_pipe("scispacy_linker")
@@ -61,21 +61,29 @@ class ScispacyUmlsNer:
                     score = round(score, 3)
                     details = linker.kb.cui_to_entity[umls_entity[0]]
                     self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text,
-                                               entity=entity.text,
-                                               entity_label=entity.label_, umls_cui=cui,
-                                               umls_label=details.canonical_name,
-                                               umls_semantic_types=details.types, umls_definition=details.definition,
+                                               entity=entity.text, entity_type=entity.label_, umls_cui=cui,
+                                               umls_label=details.canonical_name, umls_semantic_types=details.types,
+                                               umls_definition=details.definition,
                                                umls_synonyms=", ".join(details.aliases), umls_mapping_score=score)
             else:
                 self._log.info(f"No UMLS mappings found for entity: {text}")
                 self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text,
-                                           entity=entity.text, entity_label=entity.label_)
+                                           entity=entity.text, entity_type=entity.label_)
         if output_as_df:
             return pd.DataFrame(output_data, columns=self._output_df_headers)
         else:
             return output_data
 
-    def extract_entities_in_file(self, text_file):
+    def extract_entities_in_list(self, string_list, output_as_df=False):
+        output_data = []
+        for string in string_list:
+            output_data.extend(self.extract_entities(string))
+        if output_as_df:
+            return pd.DataFrame(output_data, columns=self._output_df_headers)
+        else:
+            return output_data
+
+    def extract_entities_in_file(self, text_file, output_as_df=False):
         self._log.info(f"\nProcessing {text_file}...")
         output_data = []
         with open(text_file, 'r') as file:
@@ -84,15 +92,18 @@ class ScispacyUmlsNer:
                 line = line.replace("\n", "")
                 if line != "":
                     output_data.extend(self.extract_entities(line))
-        output_df = pd.DataFrame(output_data, columns=self._output_df_headers)
-        return output_df
+        if output_as_df:
+            return pd.DataFrame(output_data, columns=self._output_df_headers)
+        else:
+            return output_data
 
-    def _add_entity_to_output(self, data, input_id, input_text, entity, entity_label, umls_cui="", umls_label="",
+    def _add_entity_to_output(self, data, input_id, input_text, entity, entity_type, umls_cui="", umls_label="",
                               umls_definition="", umls_semantic_types=(), umls_synonyms="", umls_mapping_score=""):
-        data.append({"ID": input_id,
+        # TODO create object to represent a "linked entity"
+        data.append({"InputID": input_id,
                      "InputText": input_text,
                      "Entity": entity,
-                     "EntityLabel": entity_label,
+                     "EntityType": entity_type,
                      "UMLS.CUI": umls_cui,
                      "UMLS.Label": umls_label,
                      "UMLS.Definition": umls_definition,
