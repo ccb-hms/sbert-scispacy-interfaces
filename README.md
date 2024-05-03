@@ -4,13 +4,14 @@ prototype tools for NER with [scispaCy](https://allenai.github.io/scispacy/) and
 ## scispaCy NER
 `scispacy_ner.py` provides the class `ScispacyUmlsNer` that takes as input a scispaCy model name (see models [here](https://allenai.github.io/scispacy/)) and then can extract named entities in:
 - a _string_ via the function `extract_entities(<string>)`
+- a _list of strings_ via the function `extract_entities_in_list(<string_list>)`
 - a _file_ containing a list of _strings_ via the function `extract_entities_in_file(<file>)` 
 
 Both functions return a data frame containing:
-- `ID` a random UUID assigned to each input string
+- `InputID` a random UUID assigned to each input string
 - `InputText` the input string
 - `Entity` an entity detected in the input string 
-- `EntityLabel` the "label" of the entity as categorized by scispacy's NER (e.g. `Disease` or `Chemical`)
+- `EntityType` the type of entity as categorized by scispacy's NER (e.g. `Disease` or `Chemical`)
 
 And then details of the UMLS terms that the detected entities were mapped to in the UMLS Metathesaurus:
 - `UMLS.CUI` each term's CUI (UMLS Concept Unique Identifier)
