@@ -19,13 +19,12 @@ def get_pdf_chunks(pdf_file):
 
 
 if __name__ == '__main__':
-    data = "data/"
+    data_folder = "data/"
     pdf1 = "AMIE.pdf"
     pdf2 = "1-s2.0-S1538544221000821-main.pdf"
 
-    my_pdf_file_path = data + pdf2
-    my_scispacy = ScispacyUmlsNer()
+    my_pdf_file_path = data_folder + pdf2
     my_pdf_chunks = get_pdf_chunks(my_pdf_file_path)
-
+    my_scispacy = ScispacyUmlsNer()
     entities_df = my_scispacy.extract_entities_in_list(my_pdf_chunks, output_as_df=True)
     entities_df.to_csv(f"output/{pdf2}.tsv", sep="\t", index=False)
