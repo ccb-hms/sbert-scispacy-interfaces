@@ -178,7 +178,7 @@ class SbertEmbedder:
 
 
 if __name__ == '__main__':
-    output_folder = "output_sbert"
+    output_folder = os.path.join("output", "output_sbert")
     os.makedirs(output_folder, exist_ok=True)
 
     # create sentence embedder using the specified model
