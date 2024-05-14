@@ -126,7 +126,7 @@ if __name__ == '__main__':
     os.makedirs(output_dir, exist_ok=True)
 
     # instantiate scispacy with the specified model
-    my_scispacy = ScispacyUmlsNer(input_model)
+    my_scispacy = ScispacyUmlsNer(model=input_model)
 
     # extract entities in the given input file
     entities_df = my_scispacy.extract_entities_in_file(filepath=input_file, output_as_df=True)

@@ -5,7 +5,7 @@ prototype tools for NER with [scispaCy](https://allenai.github.io/scispacy/) and
 `scispacy_ner.py` provides the class `ScispacyUmlsNer` that takes as input a scispaCy model name (see models [here](https://allenai.github.io/scispacy/)) and then can extract named entities in:
 - a _string_ via the function `extract_entities(<string>)`
 - a _list of strings_ via the function `extract_entities_in_list(<string_list>)`
-- a _file_ containing a list of _strings_ via the function `extract_entities_in_file(<file>)` 
+- a _file_ containing a list of _strings_ via the function `extract_entities_in_file(<filepath>)` 
 
 Both functions return a data frame containing:
 - `InputID` a random UUID assigned to each input string
@@ -17,11 +17,27 @@ And then details of the UMLS terms that the detected entities were mapped to in 
 - `UMLS.CUI` each term's CUI (UMLS Concept Unique Identifier)
 - `UMLS.Label` UMLS preferred label for the term
 - `UMLS.Definition` UMLS definition of the term
+- `UMLS.Synonyms` UMLS synonyms for the term
 - `UMLS.SemanticTypeIDs` UMLS (broad) semantic types of the term 
 - `UMLS.SemanticTypeLabels` UMLS labels of the semantic types of the term
-- `UMLS.Synonyms` UMLS synonyms for the term
-- `UMLS.Score` confidence score of the mapping between `Entity` and this UMLS term 
+- `UMLS.MappingScore` confidence score of the mapping between `Entity` and this UMLS term 
 
+### Example Usage
+
+Instantiate `ScispacyUmlsNer` with a model of interest:
+```python
+my_scispacy = ScispacyUmlsNer(model="en_core_sci_scibert")
+```
+
+Extract entities in a string:
+```python
+entities_df = my_scispacy.extract_entities(text="my dog Milo has the flu", output_as_df=True)
+```
+
+Extract entities in a file:
+```python
+entities_df = my_scispacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
+```
 
 ## Sentence-BERT (sbert) embeddings
 `sbert_embedder.py` provides the class `SbertEmbedder` that takes as input the name of a sentence embedding model (see models [here](https://www.sbert.net/docs/pretrained_models.html)), and then can compare two lists of strings (or two files containing lists of strings), or a list of strings with an ontology, based on embeddings generated for those strings using the specified embedding model.
