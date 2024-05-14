@@ -26,17 +26,17 @@ And then details of the UMLS terms that the detected entities were mapped to in 
 
 Instantiate `ScispacyUmlsNer` with a model of interest:
 ```python
-my_scispacy = ScispacyUmlsNer(model="en_core_sci_scibert")
+myspacy = ScispacyUmlsNer(model="en_core_sci_scibert")
 ```
 
 Extract entities in a string:
 ```python
-entities_df = my_scispacy.extract_entities(text="my dog Milo has the flu", output_as_df=True)
+entities = myspacy.extract_entities(text="my dog Milo has the flu", output_as_df=True)
 ```
 
 Extract entities in a file:
 ```python
-entities_df = my_scispacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
+entities = myspacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
 ```
 
 ## Sentence-BERT (sbert) embeddings
