@@ -4,7 +4,7 @@
 class LinkedNamedEntity:
 
     def __init__(self, input_id, input_text, entity, entity_type, umls_cui, umls_label, umls_definition, umls_synonyms,
-                umls_semantic_type_ids, umls_semantic_type_labels, umls_mapping_score):
+                 umls_semantic_type_ids, umls_semantic_type_labels, umls_mapping_score):
         self._input_id = input_id
         self._input_text = input_text
         self._entity = entity

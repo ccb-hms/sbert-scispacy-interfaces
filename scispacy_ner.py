@@ -15,7 +15,7 @@ import nltk
 
 nltk.download('punkt')
 
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 
 
 class ScispacyUmlsNer:
@@ -35,10 +35,6 @@ class ScispacyUmlsNer:
                                                       "filter_for_definitions": False,
                                                       "no_definition_threshold": 0.85,
                                                       "max_entities_per_mention": 1})
-        # Headers of output dataframe
-        self._output_df_headers = ["InputID", "InputText", "Entity", "EntityType", "UMLS.CUI", "UMLS.Label",
-                                   "UMLS.Definition", "UMLS.Synonyms", "UMLS.SemanticTypeIDs",
-                                   "UMLS.SemanticTypeLabels", "UMLS.MappingScore"]
 
         # Load UMLS Semantic Types table
         # https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/documentation/SemanticTypesAndGroups.html
@@ -71,7 +67,7 @@ class ScispacyUmlsNer:
                     self._add_entity_to_output(data=output_data, input_id=temp_entity_id, input_text=text,
                                                entity=entity.text, entity_type=entity.label_)
         if output_as_df:
-            return pd.DataFrame(output_data, columns=self._output_df_headers)
+            return pd.DataFrame(output_data)
         else:
             return output_data
 
@@ -80,7 +76,7 @@ class ScispacyUmlsNer:
         for string in tqdm(string_list):
             output_data.extend(self.extract_entities(string, incl_unlinked_entities=incl_unlinked_entities))
         if output_as_df:
-            return pd.DataFrame(output_data, columns=self._output_df_headers)
+            return pd.DataFrame(output_data)
         else:
             return output_data
 
@@ -94,7 +90,7 @@ class ScispacyUmlsNer:
                 if line != "":
                     output_data.extend(self.extract_entities(line, incl_unlinked_entities=incl_unlinked_entities))
         if output_as_df:
-            return pd.DataFrame(output_data, columns=self._output_df_headers)
+            return pd.DataFrame(output_data)
         else:
             return output_data
 
