@@ -6,7 +6,7 @@ from owlready2 import *
 from text2term import OntologyTermCollector, OntologyTermType, onto_utils
 from sentence_transformers import SentenceTransformer, util
 
-__version__ = "0.2.2"
+__version__ = "0.2.3"
 
 
 class SbertEmbedder:
@@ -28,7 +28,7 @@ class SbertEmbedder:
         if save_embeddings:
             self._log.info("Serializing embeddings...")
             if output_filepath == "":
-                output_dir = "output_sbert"
+                output_dir = os.path.join("output", "sbert")
                 os.makedirs(output_dir, exist_ok=True)
                 output_filepath = os.path.join(output_dir, "sentence_embeddings.pkl")
             with open(output_filepath, "wb") as output_file:
@@ -178,7 +178,7 @@ class SbertEmbedder:
 
 
 if __name__ == '__main__':
-    output_folder = os.path.join("output", "output_sbert")
+    output_folder = os.path.join("output", "sbert")
     os.makedirs(output_folder, exist_ok=True)
 
     # create sentence embedder using the specified model

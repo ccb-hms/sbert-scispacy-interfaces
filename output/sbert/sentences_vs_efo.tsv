@@ -1,0 +1,28 @@
+query	EFO ontology	score
+Myocardial Infarction	myocardial infarction	1.000000238418579
+Myocardial Infarction	acute myocardial infarction	0.8798141479492188
+Myocardial Infarction	inferior myocardial infarction	0.8118770122528076
+heart attack	heart injury	0.7579231262207031
+heart attack	heart disease	0.7227052450180054
+heart attack	heart failure	0.7203282117843628
+alzeimer disease, alzeimer disease	Alpers syndrome	0.6970367431640625
+alzeimer disease, alzeimer disease	Alport syndrome	0.564864993095398
+alzeimer disease, alzeimer disease	AL amyloidosis	0.5556466579437256
+alzheimer's	Alzheimer disease	0.8619118928909302
+alzheimer's	dementia	0.8255504369735718
+alzheimer's	late-onset Alzheimers disease. late-onset Alzheimer's disease	0.6615217924118042
+physical activity	physical activity	1.0
+physical activity	physical activity measurement	0.8286322355270386
+physical activity	exercise	0.7478550672531128
+exercising	exercise	0.9224300384521484
+exercising	physical activity	0.7985790371894836
+exercising	response to exercise	0.7399188876152039
+lyme	Lyme disease	0.8558613657951355
+lyme	hymenolepiasis	0.5728493928909302
+lyme	lysozyme C measurement	0.5299490094184875
+lime disease	Chuvash erythrocytosis	0.4955078363418579
+lime disease	disease	0.4926092028617859
+lime disease	dense deposit disease	0.4881266951560974
+kuru	kuru	1.0000001192092896
+kuru	KURAMOCHI	0.6901847124099731
+kuru	kuru, susceptibility to	0.6674792766571045
