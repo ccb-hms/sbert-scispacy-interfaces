@@ -15,7 +15,7 @@ import nltk
 
 nltk.download('punkt')
 
-__version__ = "0.6.2"
+__version__ = "0.6.3"
 
 
 class ScispacyUmlsNer:
@@ -44,9 +44,9 @@ class ScispacyUmlsNer:
 
     def extract_entities(self, text, output_as_df=False, incl_unlinked_entities=False):
         temp_entity_id = shortuuid.ShortUUID().random(length=10)
-        text = truecase.get_true_case(text)
+        truecased_text = truecase.get_true_case(text)
         entities = []
-        doc = self._ner(text=text)
+        doc = self._ner(text=truecased_text)
         if len(doc.ents) == 0:
             self._log.debug(f"No named entities found in text: {text}")
         for entity in doc.ents:  # Extract named entities and link them to UMLS
