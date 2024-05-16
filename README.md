@@ -24,19 +24,30 @@ And then details of the UMLS terms that the detected entities were mapped to in 
 
 ### Example Usage
 
-Instantiate `ScispacyUmlsNer` with a model of interest:
+Instantiate `ScispacyUmlsNer` with a model of interest, e.g. _en_core_sci_scibert_:
 ```python
 myspacy = ScispacyUmlsNer(model="en_core_sci_scibert")
 ```
 
-Extract entities in a string:
+Extract entities in a string and get a list of entities of type `LinkedNamedEntity`:
+
 ```python
-entities = myspacy.extract_entities(text="my dog Milo has the flu", output_as_df=True)
+ents = myspacy.extract_entities(input_text="my dog Milo has the flu")
 ```
 
-Extract entities in a file:
+Extract entities in a file and get a data frame:
 ```python
-entities = myspacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
+ents_df = myspacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
+```
+
+Extract entities in a table and get a data frame:
+```python
+ents_df = myspacy.extract_entities_in_table(filepath="table.tsv", input_col_sep="\t", input_text_col="InputText", input_id_col="InputID")
+```
+
+It is also possible to use this module from a terminal, for example: 
+```shell
+python scispacy_ner.py --input data/gwascatalog_metadata.tsv --model en_ner_bc5cdr_md --col DISEASE.TRAIT --id STUDY.ACCESSION
 ```
 
 ## Sentence-BERT (sbert) embeddings
