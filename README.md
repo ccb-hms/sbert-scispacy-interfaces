@@ -43,7 +43,7 @@ df = myspacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=
 Extract entities in a table and get a data frame:
 ```python
 df = myspacy.extract_entities_in_table(filepath="mytable.tsv", output_as_df=True,
-                                       input_text_col="InputText", input_id_col="InputID")
+                                       input_text_col="Input", input_id_col="InputID")
 ```
 
 It is also possible to use this module from a terminal, for example: 
