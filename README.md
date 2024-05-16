@@ -1,11 +1,12 @@
-# sbert-scispacy-interfaces
+# sbert-scispacy-tools
 prototype tools for NER with [scispaCy](https://allenai.github.io/scispacy/) and generating sentence embeddings with [SentenceTransformers (sbert)](https://www.sbert.net)
 
 ## scispaCy NER
-`scispacy_ner.py` provides the class `ScispacyUmlsNer` that takes as input a scispaCy model name (see models [here](https://allenai.github.io/scispacy/)) and then can extract named entities in:
-- a _string_ via the function `extract_entities(<string>)`
-- a _list of strings_ via the function `extract_entities_in_list(<string_list>)`
-- a _file_ containing a list of _strings_ via the function `extract_entities_in_file(<filepath>)` 
+`scispacy_ner.py` provides the class `ScispacyUmlsNer` that takes as input a scispaCy model name (see models [here](https://allenai.github.io/scispacy/)) and then can extract named entities in a:
+- _string_ using the function `extract_entities(<string>)`
+- _list of strings_ using the function `extract_entities_in_list(<string_list>)`
+- _file_ containing a list of _strings_ using the function `extract_entities_in_file(<filepath>)`
+- _table_ containing a column of _strings_ and (optionally) associated _identifiers_ using the function `extract_entities_in_table(<filepath> <input_text_col> [<input_id_col>])`
 
 Both functions return a data frame containing:
 - `InputID` a random UUID assigned to each input string
