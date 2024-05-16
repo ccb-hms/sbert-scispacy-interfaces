@@ -37,17 +37,18 @@ ents = myspacy.extract_entities(input_text="my dog Milo has the flu")
 
 Extract entities in a file and get a data frame:
 ```python
-ents_df = myspacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
+df = myspacy.extract_entities_in_file(filepath="example/file.txt", output_as_df=True)
 ```
 
 Extract entities in a table and get a data frame:
 ```python
-ents_df = myspacy.extract_entities_in_table(filepath="table.tsv", input_col_sep="\t", input_text_col="InputText", input_id_col="InputID")
+df = myspacy.extract_entities_in_table(filepath="table.tsv", output_as_df=True, input_col_sep="\t",
+                                       input_text_col="InputText", input_id_col="InputID")
 ```
 
 It is also possible to use this module from a terminal, for example: 
 ```shell
-python scispacy_ner.py --input data/gwascatalog_metadata.tsv --model en_ner_bc5cdr_md --col DISEASE.TRAIT --id STUDY.ACCESSION
+python scispacy_ner.py --input data/gwascatalog_metadata.tsv --model en_ner_bc5cdr_md --col "DISEASE.TRAIT" --id "STUDY.ACCESSION"
 ```
 
 ## Sentence-BERT (sbert) embeddings
