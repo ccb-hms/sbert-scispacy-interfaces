@@ -52,6 +52,27 @@ It is also possible to use this module from a terminal, for example:
 python scispacy_ner.py --input data/gwascatalog_metadata.tsv --model en_ner_bc5cdr_md --col "DISEASE.TRAIT" --id "STUDY.ACCESSION"
 ```
 
+### Models
+
+| Model	                                                                                                                        | Entity Types                                                                                                                                                                                                                                                                             |
+|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [en_ner_craft_md](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_craft_md-0.5.4.tar.gz)	           | GGP, SO, TAXON, CHEBI, GO, CL                                                                                                                                                                                                                                                            |
+| [en_ner_jnlpba_md](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_jnlpba_md-0.5.4.tar.gz)	         | DNA, CELL_TYPE, CELL_LINE, RNA, PROTEIN                                                                                                                                                                                                                                                  |
+| [en_ner_bc5cdr_md](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz)	         | DISEASE, CHEMICAL                                                                                                                                                                                                                                                                        |
+| [en_ner_bionlp13cg_md](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bionlp13cg_md-0.5.4.tar.gz)	 | AMINO_ACID, ANATOMICAL_SYSTEM, CANCER, CELL, CELLULAR_COMPONENT, ORGAN, TISSUE, ORGANISM, DEVELOPING_ANATOMICAL_STRUCTURE, GENE_OR_GENE_PRODUCT, IMMATERIAL_ANATOMICAL_ENTITY, MULTI-TISSUE_STRUCTURE, ORGANISM_SUBDIVISION, ORGANISM_SUBSTANCE, PATHOLOGICAL_FORMATION, SIMPLE_CHEMICAL |
+| [en_core_sci_scibert](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_scibert-0.5.4.tar.gz)    | A full spaCy pipeline for biomedical data with a ~785k vocabulary and allenai/scibert-base as the transformer model                                                                                                                                                                      |
+
+Models must be individually installed as such:
+
+```python
+pip install <Model URL>
+```
+for example:
+```python
+pip install "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_scibert-0.5.4.tar.gz"
+```
+
+
 ## Sentence-BERT (sbert) embeddings
 `sbert_embedder.py` provides the class `SbertEmbedder` that takes as input the name of a sentence embedding model (see models [here](https://www.sbert.net/docs/pretrained_models.html)), and then can compare two lists of strings (or two files containing lists of strings), or a list of strings with an ontology, based on embeddings generated for those strings using the specified embedding model.
 
