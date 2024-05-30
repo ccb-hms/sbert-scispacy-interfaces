@@ -9,7 +9,6 @@ pandas~=2.0.3
 nltk~=3.8.1
 pydantic~=2.6.4
 pypdf2~=3.0.1
-argparse~=1.4.0
 llama_index==0.10.34
 pdf4llm~=0.0.7
 langchain~=0.1.17
