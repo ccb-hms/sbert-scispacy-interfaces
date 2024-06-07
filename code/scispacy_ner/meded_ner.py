@@ -4,7 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 from scispacy_ner import ScispacyUmlsNer
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def load_json_file_as_df(json_file_path):
@@ -18,12 +18,7 @@ def do_ner(course_table, ner):
     entities_in_model_answers = pd.DataFrame()
     entities_in_student_answers = pd.DataFrame()
     quizzes = course_table['quiz_id'].unique()
-    counter = 1  # TODO *temp* to remove
     for quiz in tqdm(quizzes):
-        if counter > 10:  # TODO *temp* to remove
-            break
-        else:
-            counter += 1
         quiz_questions = {}
         quiz_answers = course_table[course_table['quiz_id'] == quiz]
         for index, row in quiz_answers.iterrows():
