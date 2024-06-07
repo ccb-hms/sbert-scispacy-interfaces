@@ -129,7 +129,7 @@ if __name__ == '__main__':
     input_file = args.input
 
     # prepare output folder and file
-    output_dir = os.path.join("", "output", "scispacy_ner", f"model_{input_model}")
+    output_dir = os.path.join("..", "..", "output", "scispacy_ner", f"model_{input_model}")
     output_file_path = os.path.join(output_dir, input_file.split(os.sep)[-1] + "_entities.tsv")
     os.makedirs(output_dir, exist_ok=True)
 

@@ -28,7 +28,7 @@ class SbertEmbedder:
         if save_embeddings:
             self._log.info("Serializing embeddings...")
             if output_filepath == "":
-                output_dir = os.path.join("output", "sbert")
+                output_dir = os.path.join("../../output", "sbert")
                 os.makedirs(output_dir, exist_ok=True)
                 output_filepath = os.path.join(output_dir, "sentence_embeddings.pkl")
             with open(output_filepath, "wb") as output_file:
@@ -178,7 +178,7 @@ class SbertEmbedder:
 
 
 if __name__ == '__main__':
-    output_folder = os.path.join("output", "sbert")
+    output_folder = os.path.join("../../output", "sbert")
     os.makedirs(output_folder, exist_ok=True)
 
     # create sentence embedder using the specified model
@@ -217,6 +217,6 @@ if __name__ == '__main__':
     """
     EXAMPLE 4: COMPARE TWO FILES CONTAINING LISTS OF SENTENCES
     """
-    results_files = my_sbert.compare_files(left_file="data/InfDisease.txt", right_file="data/InfDfromEFO.txt", top_k=2,
+    results_files = my_sbert.compare_files(left_file="../../data/InfDisease.txt", right_file="../../data/InfDfromEFO.txt", top_k=2,
                                            left_description="InfDisease", right_description="InfDfromEFO")
     results_files.to_csv(os.path.join(output_folder, "InfDisease_vs_InfDfromEFO.tsv"), sep="\t", index=False)
