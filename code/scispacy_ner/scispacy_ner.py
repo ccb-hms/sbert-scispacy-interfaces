@@ -1,4 +1,7 @@
+"""Provides ScispacyUmlsNer class"""
+
 import os
+import sys
 import spacy
 import scispacy
 import logging
@@ -7,20 +10,19 @@ import shortuuid
 import truecase
 import pandas as pd
 from tqdm import tqdm
-from text2term import onto_utils
 from scispacy.linking import EntityLinker
 from named_entity import LinkedNamedEntity
 import nltk
 
 nltk.download('punkt')
 
-__version__ = "0.7.0"
+__version__ = "0.7.1"
 
 
 class ScispacyUmlsNer:
 
-    def __init__(self, model="en_ner_bc5cdr_md"):
-        self._log = onto_utils.get_logger("scispacy.ner", logging.INFO)
+    def __init__(self, model="en_core_sci_scibert"):
+        self._log = ScispacyUmlsNer._get_logger("scispacy.ner", logging.INFO)
 
         # Load the given scispacy model
         self._model = model
@@ -35,7 +37,7 @@ class ScispacyUmlsNer:
                                                       "max_entities_per_mention": 1})
 
         # Load UMLS Semantic Types table
-        # https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/documentation/SemanticTypesAndGroups.html
+        # see https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/documentation/SemanticTypesAndGroups.html
         self._umls_semantic_types = pd.read_csv(
             "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt",
             sep="|", names=['abbv', 'tui', 'label'])
@@ -115,6 +117,18 @@ class ScispacyUmlsNer:
             semantic_type_labels_df = self._umls_semantic_types[self._umls_semantic_types["tui"] == semantic_type]
             semantic_type_labels += semantic_type_labels_df["label"].item() + ","
         return semantic_type_labels.rstrip(",")
+
+    @staticmethod
+    def _get_logger(name, level=logging.INFO):
+        formatter = logging.Formatter("%(asctime)s %(levelname)s [%(name)s]: %(message)s", "%Y-%m-%d %H:%M:%S")
+        logger = logging.getLogger(name)
+        logger.setLevel(level=level)
+        console_handler = logging.StreamHandler(sys.stdout)
+        console_handler.setFormatter(formatter)
+        if not logger.hasHandlers():
+            logger.addHandler(console_handler)
+        logger.propagate = False
+        return logger
 
 
 if __name__ == '__main__':
