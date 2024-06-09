@@ -12,11 +12,13 @@ import pandas as pd
 from tqdm import tqdm
 from scispacy.linking import EntityLinker
 from named_entity import LinkedNamedEntity
+import warnings
 import nltk
 
 nltk.download('punkt')
+warnings.filterwarnings("ignore", category=UserWarning)
 
-__version__ = "0.7.1"
+__version__ = "0.7.2"
 
 
 class ScispacyUmlsNer:
@@ -42,12 +44,16 @@ class ScispacyUmlsNer:
             "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt",
             sep="|", names=['abbv', 'tui', 'label'])
 
-    def extract_entities(self, input_text, input_id="", output_as_df=False, incl_unlinked_entities=False):
+    def extract_entities(self, input_text, input_id="", incl_unlinked_entities=False, output_as_df=False):
+        if (not isinstance(input_text, str)) or input_text == "":
+            self._log.warning(f"Input text must be a non-empty string: {input_text} ({input_id})")
+            return pd.DataFrame() if output_as_df else []
         if input_id == "":
             input_id = shortuuid.ShortUUID().random(length=10)
-        truecased_text = truecase.get_true_case(input_text)
+        truecase_text = truecase.get_true_case(input_text)
+        truecase_text = truecase_text.replace("\n", "").replace("\t", " ")
         entities = []
-        doc = self._ner(text=truecased_text)
+        doc = self._ner(text=truecase_text)
         if len(doc.ents) == 0:
             self._log.debug(f"No named entities found in text: {input_text}")
         for entity in doc.ents:  # Extract named entities and link them to UMLS
@@ -77,17 +83,12 @@ class ScispacyUmlsNer:
                                                   output_as_df=False))
         return pd.DataFrame(entities) if output_as_df else entities
 
-    def extract_entities_in_file(self, filepath, output_as_df=False, incl_unlinked_entities=False):
+    def extract_entities_in_file(self, filepath, incl_unlinked_entities=False, output_as_df=False):
         self._log.info(f"Processing file {filepath}...")
-        entities = []
         with open(filepath, 'r') as file:
             lines = file.readlines()
-            for line in tqdm(lines):
-                line = line.replace("\n", "")
-                if line != "":
-                    entities.extend(self.extract_entities(line, incl_unlinked_entities=incl_unlinked_entities,
-                                                          output_as_df=False))
-        return pd.DataFrame(entities) if output_as_df else entities
+            return self.extract_entities_in_list(lines, incl_unlinked_entities=incl_unlinked_entities,
+                                                 output_as_df=output_as_df)
 
     def extract_entities_in_table(self, filepath, input_text_col, input_id_col="", input_col_sep="\t",
                                   output_as_df=False, incl_unlinked_entities=False):
