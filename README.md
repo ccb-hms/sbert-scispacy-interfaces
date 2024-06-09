@@ -1,7 +1,6 @@
-# sbert-scispacy-tools
-prototype tools for NER with [scispaCy](https://allenai.github.io/scispacy/) and generating sentence embeddings with [SentenceTransformers (sbert)](https://www.sbert.net)
-
 ## scispaCy NER
+[scispaCy](https://allenai.github.io/scispacy/) is a Python package containing spaCy models for processing biomedical, scientific or clinical text.
+
 `scispacy_ner.py` provides the class `ScispacyUmlsNer` that takes as input a scispaCy model name (see models [here](https://allenai.github.io/scispacy/)) and then can extract named entities in a:
 - _string_ using the function `extract_entities(<string>)`
 - _list of strings_ using the function `extract_entities_in_list(<string_list>)`
@@ -73,7 +72,7 @@ pip install "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/
 ```
 
 
-## Sentence-BERT (sbert) embeddings
+## Sentence Embeddings with [SentenceTransformers (sbert)](https://www.sbert.net)
 `sbert_embedder.py` provides the class `SbertEmbedder` that takes as input the name of a sentence embedding model (see models [here](https://www.sbert.net/docs/pretrained_models.html)), and then can compare two lists of strings (or two files containing lists of strings), or a list of strings with an ontology, based on embeddings generated for those strings using the specified embedding model.
 
 ### Initializing
