@@ -18,7 +18,7 @@ import nltk
 nltk.download('punkt')
 warnings.filterwarnings("ignore", category=UserWarning)
 
-__version__ = "0.7.2"
+__version__ = "0.7.3"
 
 
 class ScispacyUmlsNer:
@@ -50,8 +50,8 @@ class ScispacyUmlsNer:
             return pd.DataFrame() if output_as_df else []
         if input_id == "":
             input_id = shortuuid.ShortUUID().random(length=10)
+        input_text = input_text.replace("\n", "").replace("\t", " ").replace("&nbsp;", "")
         truecase_text = truecase.get_true_case(input_text)
-        truecase_text = truecase_text.replace("\n", "").replace("\t", " ")
         entities = []
         doc = self._ner(text=truecase_text)
         if len(doc.ents) == 0:
