@@ -4,7 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 from scispacy_ner import ScispacyUmlsNer
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 def load_json_file_as_df(json_file_path):
@@ -40,12 +40,13 @@ def do_ner(course_table, ner):
             student_entities = _do_ner(ner, input_text=student_answer, input_id=answer_id, quiz_id=quiz,
                                        question_name=question_name, submission_id=submission_id, history_id=history_id)
             entities_in_student_answers = pd.concat([entities_in_student_answers, student_entities], ignore_index=True)
+    entities_in_student_answers = entities_in_student_answers.drop_duplicates()
+    entities_in_model_answers = entities_in_model_answers.drop_duplicates()
     return entities_in_student_answers, entities_in_model_answers
 
 
 def _do_ner(ner, input_text, input_id, quiz_id, question_name, submission_id="", history_id=""):
     entities_df = ner.extract_entities(input_text=input_text, input_id=input_id, output_as_df=True)
-    entities_df = entities_df.drop_duplicates()
     _add_details_to_df(entities_df, quiz_id=quiz_id, question_name=question_name,
                        submission_id=submission_id, history_id=history_id)
     return entities_df
@@ -69,7 +70,7 @@ if __name__ == '__main__':
     input_json_file = input_args.input
 
     # list NER models of interest -- probably should run each model individually via a shell script
-    ner_models = ["en_ner_jnlpba_md", "en_ner_bc5cdr_md", "en_ner_bionlp13cg_md", "en_ner_craft_md"]
+    ner_models = ["en_ner_jnlpba_md", "en_ner_bc5cdr_md", "en_ner_bionlp13cg_md", "en_ner_craft_md", "en_core_sci_scibert"]
     # ner_model = input_args.model
 
     # specify output folder based on the course name
