@@ -18,13 +18,13 @@ import nltk
 nltk.download('punkt')
 warnings.filterwarnings("ignore", category=UserWarning)
 
-__version__ = "0.7.3"
+__version__ = "0.7.4"
 
 
 class ScispacyUmlsNer:
 
     def __init__(self, model="en_core_sci_scibert"):
-        self._log = ScispacyUmlsNer._get_logger("scispacy.ner", logging.INFO)
+        self._log = ScispacyUmlsNer.get_logger("scispacy.ner", logging.INFO)
 
         # Load the given scispacy model
         self._model = model
@@ -46,7 +46,7 @@ class ScispacyUmlsNer:
 
     def extract_entities(self, input_text, input_id="", incl_unlinked_entities=False, output_as_df=False):
         if (not isinstance(input_text, str)) or input_text == "":
-            self._log.warning(f"Input text must be a non-empty string: {input_text} ({input_id})")
+            self._log.debug(f"Input text must be a non-empty string: {input_text} ({input_id})")
             return pd.DataFrame() if output_as_df else []
         if input_id == "":
             input_id = shortuuid.ShortUUID().random(length=10)
@@ -120,7 +120,7 @@ class ScispacyUmlsNer:
         return semantic_type_labels.rstrip(",")
 
     @staticmethod
-    def _get_logger(name, level=logging.INFO):
+    def get_logger(name, level=logging.INFO):
         formatter = logging.Formatter("%(asctime)s %(levelname)s [%(name)s]: %(message)s", "%Y-%m-%d %H:%M:%S")
         logger = logging.getLogger(name)
         logger.setLevel(level=level)
