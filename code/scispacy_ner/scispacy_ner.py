@@ -17,8 +17,9 @@ import nltk
 
 nltk.download('punkt')
 warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore", category=FutureWarning)
 
-__version__ = "0.7.4"
+__version__ = "0.7.5"
 
 
 class ScispacyUmlsNer:
@@ -118,6 +119,11 @@ class ScispacyUmlsNer:
             semantic_type_labels_df = self._umls_semantic_types[self._umls_semantic_types["tui"] == semantic_type]
             semantic_type_labels += semantic_type_labels_df["label"].item() + ","
         return semantic_type_labels.rstrip(",")
+
+    @staticmethod
+    def ner_models():
+        return ["en_ner_bc5cdr_md", "en_ner_jnlpba_md", "en_ner_bionlp13cg_md",
+                "en_ner_craft_md", "en_core_sci_scibert"]
 
     @staticmethod
     def get_logger(name, level=logging.INFO):
