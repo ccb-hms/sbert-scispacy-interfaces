@@ -4,7 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 from scispacy_ner import ScispacyUmlsNer
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 
 def load_json_file_as_df(json_file_path):
@@ -69,9 +69,9 @@ if __name__ == '__main__':
     input_args = parser.parse_args()
     input_json_file = input_args.input
 
-    # list NER models of interest -- probably should run each model individually via a shell script
-    ner_models = ["en_ner_jnlpba_md", "en_ner_bc5cdr_md", "en_ner_bionlp13cg_md", "en_ner_craft_md", "en_core_sci_scibert"]
-    # ner_model = input_args.model
+    ner_models = [input_args.model]
+    if ner_models[0] is None:
+        ner_models = ScispacyUmlsNer.ner_models()
 
     # specify output folder based on the course name
     course_name = os.path.basename(os.path.dirname(input_json_file))
