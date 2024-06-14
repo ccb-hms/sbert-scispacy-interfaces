@@ -19,7 +19,7 @@ nltk.download('punkt')
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-__version__ = "0.7.5"
+__version__ = "0.7.6"
 
 
 class ScispacyUmlsNer:
@@ -31,6 +31,7 @@ class ScispacyUmlsNer:
         self._model = model
         self._log.info(f"Loading scispaCy model {model}...")
         self._ner = spacy.load(self._model)
+        self._log.info("...done")
 
         # Add UMLS linking pipe
         self._ner.add_pipe("scispacy_linker", config={"resolve_abbreviations": True,
@@ -44,6 +45,10 @@ class ScispacyUmlsNer:
         self._umls_semantic_types = pd.read_csv(
             "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt",
             sep="|", names=['abbv', 'tui', 'label'])
+
+    @property
+    def model_name(self):
+        return self._model
 
     def extract_entities(self, input_text, input_id="", incl_unlinked_entities=False, output_as_df=False):
         if (not isinstance(input_text, str)) or input_text == "":
@@ -122,8 +127,7 @@ class ScispacyUmlsNer:
 
     @staticmethod
     def ner_models():
-        return ["en_ner_bc5cdr_md", "en_ner_jnlpba_md", "en_ner_bionlp13cg_md",
-                "en_ner_craft_md", "en_core_sci_scibert"]
+        return ["en_ner_bc5cdr_md", "en_ner_jnlpba_md", "en_ner_bionlp13cg_md", "en_ner_craft_md"]
 
     @staticmethod
     def get_logger(name, level=logging.INFO):
