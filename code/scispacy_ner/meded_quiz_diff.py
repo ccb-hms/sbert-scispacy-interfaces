@@ -4,7 +4,7 @@ import argparse
 import pandas as pd
 from scispacy_ner import ScispacyUmlsNer
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 
 class GradedAnswer:
@@ -61,7 +61,7 @@ class GradedAnswer:
 LOG = ScispacyUmlsNer.get_logger("meded.quiz.diff", logging.INFO)
 
 
-def compare_quiz_answers(model_answers, student_answers, output_as_df=False):
+def compare_quiz_answers(model_answers, student_answers, as_df=False):
     graded_answers = []
     quiz_ids = model_answers["quiz_id"].unique()
     for quiz_id in quiz_ids:
@@ -88,7 +88,7 @@ def compare_quiz_answers(model_answers, student_answers, output_as_df=False):
                 # get entities in the student answer that are not in the model answer
                 graded_answers.extend(diff_answer(student_answer_cuis, model_answer_cuis, student_answer, "+",
                                                   quiz_id, submission_id, question))
-    return pd.DataFrame([answer.as_dict() for answer in graded_answers]) if output_as_df else graded_answers
+    return pd.DataFrame([answer.as_dict() for answer in graded_answers]) if as_df else graded_answers
 
 
 def diff_answer(left_cuis, right_cuis, answer_df, grade, quiz_id, submission_id, question):
@@ -105,15 +105,23 @@ def diff_answer(left_cuis, right_cuis, answer_df, grade, quiz_id, submission_id,
     return graded_answers
 
 
+def do_diffs(ner_data_folder, save_to_file=False):
+    merged_diffs = pd.DataFrame()
+    for model in ScispacyUmlsNer.ner_models():
+        model_answers_df = pd.read_csv(f"{ner_data_folder}{os.sep}ner_{model}_model_answers.tsv", sep="\t")
+        student_answers_df = pd.read_csv(f"{ner_data_folder}{os.sep}ner_{model}_student_answers.tsv", sep="\t")
+        diff = compare_quiz_answers(model_answers=model_answers_df, student_answers=student_answers_df, as_df=True)
+        diff.to_csv(f"{ner_data_folder}{os.sep}ner_{model}_quiz_diff.tsv", sep="\t", index=False)
+        merged_diffs = pd.concat([merged_diffs, diff], ignore_index=True)
+    if save_to_file:
+        merged_diffs.to_csv(f"{ner_data_folder}{os.sep}ner_merged_quiz_diffs.tsv", sep="\t", index=False)
+    return merged_diffs
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("meded_quiz_diff")
     parser.add_argument("-d", "--dir", required=True, type=str,
                         help="Directory containing the tables of entities detected in the model and student answers")
     args = parser.parse_args()
-    ner_data_folder = args.dir
-    for model in ScispacyUmlsNer.ner_models():
-        model_answers_df = pd.read_csv(f"{ner_data_folder}{os.sep}ner_{model}_model_answers.tsv", sep="\t")
-        student_answers_df = pd.read_csv(f"{ner_data_folder}{os.sep}ner_{model}_student_answers.tsv", sep="\t")
-        diff = compare_quiz_answers(model_answers=model_answers_df, student_answers=student_answers_df,
-                                    output_as_df=True)
-        diff.to_csv(f"{ner_data_folder}{os.sep}ner_{model}_quiz_diff.tsv", sep="\t", index=False)
+
+    do_diffs(args.dir, save_to_file=True)
