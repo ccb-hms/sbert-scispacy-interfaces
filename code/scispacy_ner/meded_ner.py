@@ -67,7 +67,7 @@ def _add_details_to_df(df, quiz_id, question_name, submission_id="", history_id=
 def do_ner_all_models(quiz_json_file, ner_models, output_dir):
     # load the input JSON file into a pandas dataframe and serialize it
     course_data = load_json_file_as_df(quiz_json_file)
-    course_data.to_csv(f"{output_dir}{os.sep}essay_data.tsv", sep="\t", index=False)
+    course_data.to_csv(f"{output_dir}{os.sep}quiz_metadata.tsv", sep="\t", index=False)
 
     merged_student_entities_df = pd.DataFrame()
     merged_model_entities_df = pd.DataFrame()
