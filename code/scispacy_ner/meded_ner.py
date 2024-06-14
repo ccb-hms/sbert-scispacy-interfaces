@@ -4,7 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 from scispacy_ner import ScispacyUmlsNer
 
-__version__ = "0.1.3"
+__version__ = "0.2.0"
 
 
 def load_json_file_as_df(json_file_path):
@@ -42,6 +42,8 @@ def do_ner(course_table, ner):
             entities_in_student_answers = pd.concat([entities_in_student_answers, student_entities], ignore_index=True)
     entities_in_student_answers = entities_in_student_answers.drop_duplicates()
     entities_in_model_answers = entities_in_model_answers.drop_duplicates()
+    entities_in_student_answers["ner_model"] = ner.model_name
+    entities_in_model_answers["ner_model"] = ner.model_name
     return entities_in_student_answers, entities_in_model_answers
 
 
@@ -62,25 +64,13 @@ def _add_details_to_df(df, quiz_id, question_name, submission_id="", history_id=
     return df
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser("meded_ner")
-    parser.add_argument("-i", "--input", required=True, type=str, help="Input JSON file")
-    parser.add_argument("-m", "--model", type=str, help="Name of the scispaCy model to be used")
-    input_args = parser.parse_args()
-    input_json_file = input_args.input
-
-    ner_models = [input_args.model]
-    if ner_models[0] is None:
-        ner_models = ScispacyUmlsNer.ner_models()
-
-    # specify output folder based on the course name
-    course_name = os.path.basename(os.path.dirname(input_json_file))
-    output_dir = os.path.join("output", course_name)
-    os.makedirs(output_dir, exist_ok=True)
-
+def do_ner_all_models(quiz_json_file, ner_models, output_dir):
     # load the input JSON file into a pandas dataframe and serialize it
-    course_data = load_json_file_as_df(input_json_file)
+    course_data = load_json_file_as_df(quiz_json_file)
     course_data.to_csv(f"{output_dir}{os.sep}essay_data.tsv", sep="\t", index=False)
+
+    merged_student_entities_df = pd.DataFrame()
+    merged_model_entities_df = pd.DataFrame()
 
     for ner_model in ner_models:
         # instantiate our scispacy named entity recognizer with the given model name
@@ -92,3 +82,30 @@ if __name__ == '__main__':
         # save the obtained data frames of entities detected in the student answers and of entities in the model answers
         student_entities_df.to_csv(f"{output_dir}{os.sep}ner_{ner_model}_student_answers.tsv", sep="\t", index=False)
         model_entities_df.to_csv(f"{output_dir}{os.sep}ner_{ner_model}_model_answers.tsv", sep="\t", index=False)
+
+        merged_student_entities_df = pd.concat([merged_student_entities_df, student_entities_df], ignore_index=True)
+        merged_model_entities_df = pd.concat([merged_model_entities_df, model_entities_df], ignore_index=True)
+
+    merged_model_entities_df.to_csv(f"{output_dir}{os.sep}ner_merged_model_answers.tsv", sep="\t", index=False)
+    merged_student_entities_df.to_csv(f"{output_dir}{os.sep}ner_merged_student_answers.tsv", sep="\t", index=False)
+    return merged_model_entities_df, merged_student_entities_df
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser("meded_ner")
+    parser.add_argument("-i", "--input", required=True, type=str, help="Input JSON file")
+    parser.add_argument("-m", "--model", type=str, help="Name of the scispaCy model to be used")
+    input_args = parser.parse_args()
+    input_json_file = input_args.input
+
+    input_ner_models = [input_args.model]
+    # if no model is specified apply all models
+    if input_ner_models[0] is None:
+        input_ner_models = ScispacyUmlsNer.ner_models()
+
+    # specify output path based on the course name in the input filepath
+    course_name = os.path.basename(os.path.dirname(input_json_file))
+    output_folder = os.path.join("output", course_name)
+    os.makedirs(output_folder, exist_ok=True)
+
+    do_ner_all_models(quiz_json_file=input_json_file, ner_models=input_ner_models, output_dir=output_folder)
