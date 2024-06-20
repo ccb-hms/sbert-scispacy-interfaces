@@ -1,6 +1,7 @@
 """Provides ScispacyUmlsNer class"""
 
 import os
+import re
 import sys
 import spacy
 import scispacy
@@ -19,7 +20,7 @@ nltk.download('punkt')
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-__version__ = "0.7.6"
+__version__ = "0.7.7"
 
 
 class ScispacyUmlsNer:
@@ -34,17 +35,19 @@ class ScispacyUmlsNer:
         self._log.info("...done")
 
         # Add UMLS linking pipe
-        self._ner.add_pipe("scispacy_linker", config={"resolve_abbreviations": True,
-                                                      "linker_name": "umls",
-                                                      "filter_for_definitions": False,
-                                                      "no_definition_threshold": 0.85,
-                                                      "max_entities_per_mention": 1})
+        self._ner.add_pipe("scispacy_linker",
+                           config={"resolve_abbreviations": True,
+                                   "linker_name": "umls",
+                                   "filter_for_definitions": False,
+                                   "no_definition_threshold": 0.85,
+                                   "max_entities_per_mention": 1})
 
         # Load UMLS Semantic Types table
         # see https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/documentation/SemanticTypesAndGroups.html
         self._umls_semantic_types = pd.read_csv(
             "https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt",
             sep="|", names=['abbv', 'tui', 'label'])
+        self._non_alphanum_re = re.compile('[\W_]+', re.UNICODE)
 
     @property
     def model_name(self):
@@ -56,7 +59,8 @@ class ScispacyUmlsNer:
             return pd.DataFrame() if output_as_df else []
         if input_id == "":
             input_id = shortuuid.ShortUUID().random(length=10)
-        input_text = input_text.replace("\n", "").replace("\t", " ").replace("&nbsp;", "")
+        input_text = input_text.replace("\n", " ").replace("\t", " ").replace("&nbsp;", " ")
+        input_text = self._non_alphanum_re.sub('', input_text)
         truecase_text = truecase.get_true_case(input_text)
         entities = []
         doc = self._ner(text=truecase_text)
