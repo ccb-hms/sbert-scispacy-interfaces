@@ -20,7 +20,7 @@ nltk.download('punkt')
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-__version__ = "0.7.7"
+__version__ = "0.8.0"
 
 
 class ScispacyUmlsNer:
@@ -60,10 +60,11 @@ class ScispacyUmlsNer:
         if input_id == "":
             input_id = shortuuid.ShortUUID().random(length=10)
         input_text = input_text.replace("\n", " ").replace("\t", " ").replace("&nbsp;", " ")
-        input_text = self._non_alphanum_re.sub('', input_text)
-        truecase_text = truecase.get_true_case(input_text)
+        clean_text = self._non_alphanum_re.sub(" ", input_text)
+        clean_text = re.sub(" +", " ", clean_text)
+        clean_text = truecase.get_true_case(clean_text)
         entities = []
-        doc = self._ner(text=truecase_text)
+        doc = self._ner(text=clean_text)
         if len(doc.ents) == 0:
             self._log.debug(f"No named entities found in text: {input_text}")
         for entity in doc.ents:  # Extract named entities and link them to UMLS
@@ -83,7 +84,7 @@ class ScispacyUmlsNer:
                 if incl_unlinked_entities:
                     self._add_entity_to_output(output=entities, input_id=input_id, input_text=input_text,
                                                entity=entity.text, entity_type=entity.label_)
-        return pd.DataFrame(entities) if output_as_df else entities
+        return self._ner_output(entities, output_as_df)
 
     def extract_entities_in_list(self, string_list, output_as_df=False, incl_unlinked_entities=False):
         self._log.info(f"Processing list of {len(string_list)} strings...")
@@ -91,27 +92,31 @@ class ScispacyUmlsNer:
         for string in tqdm(string_list):
             entities.extend(self.extract_entities(string, incl_unlinked_entities=incl_unlinked_entities,
                                                   output_as_df=False))
-        return pd.DataFrame(entities) if output_as_df else entities
+        self._log.info(f"...done")
+        return self._ner_output(entities, output_as_df)
 
-    def extract_entities_in_file(self, filepath, incl_unlinked_entities=False, output_as_df=False):
+    def extract_entities_in_file(self, filepath, input_text_col=None, input_id_col=None, input_col_sep=None,
+                                 output_as_df=False, incl_unlinked_entities=False):
         self._log.info(f"Processing file {filepath}...")
-        with open(filepath, 'r') as file:
-            lines = file.readlines()
-            return self.extract_entities_in_list(lines, incl_unlinked_entities=incl_unlinked_entities,
-                                                 output_as_df=output_as_df)
-
-    def extract_entities_in_table(self, filepath, input_text_col, input_id_col="", input_col_sep="\t",
-                                  output_as_df=False, incl_unlinked_entities=False):
-        self._log.info(f"Processing table {filepath}...")
         entities = []
-        input_table = pd.read_csv(filepath, sep=input_col_sep)
-        for index, row in tqdm(input_table.iterrows(), total=input_table.shape[0]):
-            input_text = row[input_text_col]
-            input_id = row[input_id_col]
-            if not pd.isna(input_text):
-                entities.extend(self.extract_entities(input_text=input_text, input_id=input_id, output_as_df=False,
-                                                      incl_unlinked_entities=incl_unlinked_entities))
-        return pd.DataFrame(entities) if output_as_df else entities
+        if input_text_col is None:
+            with open(filepath, 'r') as file:
+                lines = file.readlines()
+                entities = self.extract_entities_in_list(lines, incl_unlinked_entities=incl_unlinked_entities,
+                                                         output_as_df=False)
+        else:
+            input_table = pd.read_csv(filepath, sep=input_col_sep)
+            for index, row in tqdm(input_table.iterrows(), total=input_table.shape[0]):
+                input_text = row[input_text_col]
+                input_id = row[input_id_col]
+                if not pd.isna(input_text):
+                    entities.extend(self.extract_entities(input_text=input_text, input_id=input_id, output_as_df=False,
+                                                          incl_unlinked_entities=incl_unlinked_entities))
+        self._log.info(f"...done")
+        return self._ner_output(entities, output_as_df)
+
+    def _ner_output(self, entities, output_as_df):
+        return pd.DataFrame([entity.as_dict() for entity in entities]) if output_as_df else entities
 
     def _add_entity_to_output(self, output, input_id, input_text, entity, entity_type, umls_cui="", umls_label="",
                               umls_definition="", umls_semantic_types=(), umls_synonyms="", umls_mapping_score=""):
@@ -120,7 +125,7 @@ class ScispacyUmlsNer:
                                    umls_synonyms=umls_synonyms, umls_semantic_type_ids=",".join(umls_semantic_types),
                                    umls_semantic_type_labels=self._get_umls_semantic_type_labels(umls_semantic_types),
                                    umls_mapping_score=umls_mapping_score)
-        output.append(entity.as_dict())
+        output.append(entity)
 
     def _get_umls_semantic_type_labels(self, semantic_types):
         semantic_type_labels = ""
@@ -146,32 +151,47 @@ class ScispacyUmlsNer:
         return logger
 
 
+def do_ner_all_models(input_file, input_text_col, input_id_col, input_col_sep):
+    merged_entities_df = pd.DataFrame()
+    for ner_model in ScispacyUmlsNer.ner_models():
+        scispacy_ner = ScispacyUmlsNer(model=ner_model)
+        entities_df = scispacy_ner.extract_entities_in_file(filepath=input_file, output_as_df=True,
+                                                            input_text_col=input_text_col, input_id_col=input_id_col,
+                                                            input_col_sep=input_col_sep)
+        entities_df["ner_model"] = ner_model
+        merged_entities_df = pd.concat([merged_entities_df, entities_df], ignore_index=True)
+    return merged_entities_df
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("scispacy_ner")
     parser.add_argument("-i", "--input", required=True, type=str, help="Input file")
     parser.add_argument("-c", "--col", type=str, help="Table column with input text")
     parser.add_argument("-d", "--id", type=str, help="Table column with input text IDs")
-    parser.add_argument("-m", "--model", default="en_core_sci_scibert", type=str,
+    parser.add_argument("-m", "--model", default="all", type=str,
                         help="Name of the scispaCy model to be used")
     args = parser.parse_args()
     input_model = args.model
-    input_file = args.input
+    input_filepath = args.input
 
     # prepare output folder and file
     output_dir = os.path.join("..", "..", "output", "scispacy_ner", f"model_{input_model}")
-    output_file_path = os.path.join(output_dir, input_file.split(os.sep)[-1] + "_entities.tsv")
+    output_file_path = os.path.join(output_dir, input_filepath.split(os.sep)[-1] + "_entities.tsv")
     os.makedirs(output_dir, exist_ok=True)
 
-    # instantiate scispacy with the specified model
-    my_scispacy = ScispacyUmlsNer(model=input_model)
+    input_file_col_sep = None
+    if ".tsv" in input_filepath:
+        input_file_col_sep = "\t"
+    elif ".csv" in input_filepath:
+        input_file_col_sep = ","
 
-    # extract entities in the given input file
-    if ".tsv" in input_file:
-        entities_df = my_scispacy.extract_entities_in_table(filepath=input_file, input_col_sep="\t", output_as_df=True,
-                                                            input_text_col=args.col, input_id_col=args.id)
-    elif ".csv" in input_file:
-        entities_df = my_scispacy.extract_entities_in_table(filepath=input_file, input_col_sep=",", output_as_df=True,
-                                                            input_text_col=args.col, input_id_col=args.id)
+    if input_model.lower() == "all":
+        detected_entities = do_ner_all_models(input_file=input_filepath, input_id_col=args.id, input_text_col=args.col,
+                                              input_col_sep=input_file_col_sep)
     else:
-        entities_df = my_scispacy.extract_entities_in_file(filepath=input_file, output_as_df=True)
-    entities_df.to_csv(output_file_path, sep="\t", index=False)
+        # instantiate scispacy with the specified model
+        my_scispacy = ScispacyUmlsNer(model=input_model)
+        detected_entities = my_scispacy.extract_entities_in_file(filepath=input_filepath, output_as_df=True,
+                                                                 input_text_col=args.col, input_id_col=args.id,
+                                                                 input_col_sep=input_file_col_sep)
+    detected_entities.to_csv(output_file_path, sep="\t", index=False)
